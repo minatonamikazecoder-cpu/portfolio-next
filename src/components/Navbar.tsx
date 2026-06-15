@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -32,7 +32,7 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       opacity: 0,
       transition: { duration: 0.3, ease: "easeInOut" },
@@ -43,7 +43,7 @@ export default function Navbar() {
     },
   };
 
-  const menuItemVariants = {
+  const menuItemVariants: Variants = {
     closed: { opacity: 0, y: 30, filter: "blur(8px)" },
     open: {
       opacity: 1,
