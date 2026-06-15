@@ -114,7 +114,6 @@ export default function PortfolioPage() {
                       category={project.category}
                       status={project.status}
                       tech={project.tech}
-                      imageUrl={project.imageUrl}
                     />
                   </motion.div>
                 ))}
