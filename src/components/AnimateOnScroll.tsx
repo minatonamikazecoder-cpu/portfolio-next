@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, ReactNode } from "react";
-import { motion, useInView, Variant } from "framer-motion";
+import { motion, useInView, TargetAndTransition } from "framer-motion";
 
 type AnimationVariant =
   | "fade-up"
@@ -21,7 +21,7 @@ interface AnimateOnScrollProps {
   once?: boolean;
 }
 
-const hiddenVariants: Record<AnimationVariant, Variant> = {
+const hiddenVariants: Record<AnimationVariant, TargetAndTransition> = {
   "fade-up": { opacity: 0, y: 40 },
   "fade-down": { opacity: 0, y: -40 },
   "fade-left": { opacity: 0, x: 40 },
@@ -31,7 +31,7 @@ const hiddenVariants: Record<AnimationVariant, Variant> = {
   "blur-in": { opacity: 0, filter: "blur(12px)", y: 10 },
 };
 
-const visibleVariants: Record<AnimationVariant, Variant> = {
+const visibleVariants: Record<AnimationVariant, TargetAndTransition> = {
   "fade-up": { opacity: 1, y: 0 },
   "fade-down": { opacity: 1, y: 0 },
   "fade-left": { opacity: 1, x: 0 },
