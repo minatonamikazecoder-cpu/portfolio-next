@@ -20,40 +20,43 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <motion.div
-      className="bg-surface border border-border-main rounded-2xl p-8 flex flex-col h-full group cursor-pointer"
+      className="bg-surface border border-border-main rounded-none p-8 flex flex-col h-full group cursor-pointer relative overflow-hidden"
       whileHover={{
-        y: -6,
-        boxShadow: "0 20px 40px -12px rgba(0,0,0,0.08)",
+        y: -4,
+        boxShadow: "0 10px 30px -10px rgba(0,240,255,0.15)",
+        borderColor: "rgba(0,240,255,0.4)",
         transition: { type: "spring", stiffness: 300, damping: 20 },
       }}
     >
+      <div className="absolute top-0 left-0 w-[2px] h-0 bg-cta group-hover:h-full transition-all duration-300 ease-out" />
+      
       <motion.div
-        className="w-12 h-12 bg-bg-alt rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-text-main group-hover:text-white transition-colors duration-300"
-        whileHover={{ rotate: 8, scale: 1.1 }}
+        className="w-12 h-12 border border-border-main bg-bg rounded-none flex items-center justify-center text-2xl mb-6 group-hover:border-cta group-hover:text-cta transition-colors duration-300"
+        whileHover={{ rotate: 90, scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300, damping: 15 }}
       >
         {icon}
       </motion.div>
 
-      <h4 className="font-heading text-xl text-text-main font-semibold mb-3">
+      <h4 className="font-heading text-xl text-text-main font-bold mb-3 uppercase tracking-tight">
         {title}
       </h4>
 
-      <p className="text-muted text-sm leading-relaxed mb-6">
+      <p className="text-muted text-sm leading-relaxed mb-6 font-mono">
         {description}
       </p>
 
       {deliverables.length > 0 && (
-        <ul className="space-y-2 mb-8">
+        <ul className="space-y-3 mb-8">
           {deliverables.map((item) => (
             <motion.li
               key={item}
-              className="text-sm text-text-secondary flex items-start gap-2.5"
+              className="text-xs font-mono text-text-secondary flex items-start gap-2.5"
               initial={{ opacity: 0.8 }}
-              whileHover={{ x: 4, opacity: 1 }}
+              whileHover={{ x: 4, opacity: 1, color: "#fcfcfc" }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <span className="text-muted flex-shrink-0">→</span>
+              <span className="text-cta flex-shrink-0">::</span>
               <span>{item}</span>
             </motion.li>
           ))}
@@ -62,16 +65,9 @@ export default function ServiceCard({
 
       <Link
         href={`/services#${id}`}
-        className="text-sm font-semibold text-text-main inline-flex items-center gap-1.5 hover:gap-2.5 transition-all mt-auto"
+        className="text-xs font-mono font-bold text-muted inline-flex items-center gap-1.5 hover:text-cta transition-all mt-auto tracking-widest uppercase"
       >
-        Learn More{" "}
-        <motion.span
-          className="inline-block"
-          whileHover={{ x: 4 }}
-          transition={{ type: "spring", stiffness: 400, damping: 15 }}
-        >
-          →
-        </motion.span>
+        [ Execute_Detail ]
       </Link>
     </motion.div>
   );

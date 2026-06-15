@@ -71,28 +71,32 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* ── HERO ── */}
-      <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-bg to-bg-alt/40 py-20 overflow-hidden">
-        {/* Decorative subtle background shapes with Parallax */}
+      <section className="relative min-h-[90vh] flex items-center bg-bg bg-dot-pattern py-20 overflow-hidden border-b border-border-main">
         <ParallaxBlobs />
         
-        <div className="container-max w-full relative z-10">
-          <div className="max-w-3xl">
+        <div className="container-max w-full relative z-10 mt-12">
+          <div className="max-w-4xl">
             <AnimateOnScroll delay={0} variant="fade-down">
-              <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-4">
-                Digital Product Studio
-              </span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-md bg-surface border border-border-main">
+                <span className="w-2 h-2 rounded-full bg-cta animate-pulse" />
+                <span className="text-xs font-mono font-medium tracking-wider text-muted uppercase">
+                  Sys_Init :: Operational
+                </span>
+              </div>
             </AnimateOnScroll>
             
             <TextReveal
-              text="Custom Software, Direct Engineers, Zero Middlemen"
-              className="font-heading text-5xl md:text-6xl lg:text-7xl text-text-main font-normal tracking-tight leading-[1.1] mb-6"
+              text="SYSTEMS ARCHITECTURE & SOFTWARE ENGINEERING"
+              className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] text-text-main font-bold tracking-tighter leading-[1.05] mb-6 uppercase"
               delay={0.15}
-              stagger={0.04}
+              stagger={0.03}
             />
 
-            <AnimateOnScroll delay={0.5} variant="blur-in">
-              <p className="text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-                From custom web platforms to cross-platform mobile apps and safe database migrations — you talk directly to the engineers writing the code. No managers, no outsourcing.
+            <AnimateOnScroll delay={0.5} variant="fade-up">
+              <p className="text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-mono text-sm">
+                > Initializing high-performance web and mobile ecosystems.
+                <br />
+                > Bypassing middlemen. Direct engineer-to-client protocols engaged.
               </p>
             </AnimateOnScroll>
             
@@ -101,17 +105,17 @@ export default function Home() {
                 <MagneticButton>
                   <Link
                     href="/portfolio"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold bg-text-main text-white hover:bg-muted/90 transition-colors shadow-md"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-none border border-cta text-sm font-mono font-bold bg-cta/10 text-cta hover:bg-cta hover:text-bg transition-colors shadow-[0_0_20px_rgba(0,240,255,0.15)] hover:shadow-[0_0_30px_rgba(0,240,255,0.3)] uppercase tracking-wider"
                   >
-                    See Our Work →
+                    Execute_Portfolio
                   </Link>
                 </MagneticButton>
                 <MagneticButton>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold border border-border-main hover:bg-text-main hover:text-white hover:border-text-main transition-colors"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-none text-sm font-mono font-bold border border-border-main hover:bg-surface hover:text-white transition-colors uppercase tracking-wider text-text-secondary"
                   >
-                    Get a Quote
+                    Initialize_Contact
                   </Link>
                 </MagneticButton>
               </div>
