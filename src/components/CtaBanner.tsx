@@ -37,7 +37,7 @@ export default function CtaBanner() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            > Awaiting parameters for your next systems migration, web platform, or custom mobile app.
+            &gt; Awaiting parameters for your next systems migration, web platform, or custom mobile app.
           </motion.p>
           <motion.div
             className="relative z-10"

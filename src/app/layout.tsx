@@ -4,10 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import dynamic from "next/dynamic";
-
-const CursorGlow = dynamic(() => import("@/components/CursorGlow"), { ssr: false });
-const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"), { ssr: false });
+import CursorGlow from "@/components/CursorGlow";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({
   variable: "--font-sans",

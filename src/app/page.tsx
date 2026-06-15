@@ -5,10 +5,8 @@ import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
-import dynamic from "next/dynamic";
-
-const ProcessTimeline = dynamic(() => import("@/components/ProcessTimeline"), { ssr: false });
-const ParallaxBlobs = dynamic(() => import("@/components/ParallaxBlobs"), { ssr: false });
+import ProcessTimeline from "@/components/ProcessTimeline";
+import ParallaxBlobs from "@/components/ParallaxBlobs";
 
 export default function Home() {
   const featuredProjects = [
@@ -94,9 +92,9 @@ export default function Home() {
 
             <AnimateOnScroll delay={0.5} variant="fade-up">
               <p className="text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-mono text-sm">
-                > Initializing high-performance web and mobile ecosystems.
+                &gt; Initializing high-performance web and mobile ecosystems.
                 <br />
-                > Bypassing middlemen. Direct engineer-to-client protocols engaged.
+                &gt; Bypassing middlemen. Direct engineer-to-client protocols engaged.
               </p>
             </AnimateOnScroll>
             
@@ -223,7 +221,6 @@ export default function Home() {
                   category={project.category}
                   status={project.status}
                   tech={project.tech}
-                  imageUrl={project.imageUrl}
                 />
               </AnimateOnScroll>
             ))}
