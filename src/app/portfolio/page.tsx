@@ -4,6 +4,7 @@ import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -96,20 +97,29 @@ export default function PortfolioPage() {
 
           {/* Grid */}
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <AnimateOnScroll key={project.title} delay={index * 0.12}>
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    category={project.category}
-                    status={project.status}
-                    tech={project.tech}
-                    imageUrl={project.imageUrl}
-                  />
-                </AnimateOnScroll>
-              ))}
-            </div>
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((project, index) => (
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 25 }}
+                    key={project.title}
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      category={project.category}
+                      status={project.status}
+                      tech={project.tech}
+                      imageUrl={project.imageUrl}
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
           ) : (
             <AnimateOnScroll>
               <div className="text-center py-20 bg-bg-alt/25 rounded-2xl border border-dashed border-border-main/60">

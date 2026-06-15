@@ -5,6 +5,7 @@ import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
+import ProcessTimeline from "@/components/ProcessTimeline";
 
 export default function Home() {
   const featuredProjects = [
@@ -242,45 +243,8 @@ export default function Home() {
               </AnimateOnScroll>
             </div>
             
-            <div className="lg:col-span-7 space-y-12 relative before:absolute before:top-2 before:bottom-12 before:left-5 before:w-[1.5px] before:bg-border-main before:z-0">
-              {[
-                {
-                  num: "1",
-                  title: "Discovery & Architecture",
-                  desc: "We analyze your project requirements, map out the system architecture, and decide on the exact database schemas (SQL vs NoSQL) and API endpoints.",
-                },
-                {
-                  num: "2",
-                  title: "High-Fidelity Interface Design",
-                  desc: "Before a single line of code is written, we design the UI/UX in Figma to ensure the application flow is frictionless for your customers.",
-                },
-                {
-                  num: "3",
-                  title: "Development & DB Migration",
-                  desc: "We build the system using TypeScript, Next.js, and Flutter. If we are upgrading an existing app, we execute safe database migrations and refactor APIs without downtime.",
-                },
-                {
-                  num: "4",
-                  title: "Beta Launch & Handover",
-                  desc: "We launch a beta version for testing, fix initial feedback, deploy it to your servers (Vercel, AWS, App Stores), and hand over 100% clean, documented code.",
-                },
-              ].map((step, index) => (
-                <AnimateOnScroll key={step.num} delay={index * 0.12} variant="fade-left">
-                  <div className="flex gap-6 items-start relative z-10">
-                    <div className="w-10 h-10 rounded-full bg-text-main text-white font-semibold flex items-center justify-center flex-shrink-0 z-10 shadow-sm">
-                      {step.num}
-                    </div>
-                    <div>
-                      <h4 className="text-base font-semibold text-text-main mb-1">
-                        {step.title}
-                      </h4>
-                      <p className="text-muted text-sm leading-relaxed">
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
+            <div className="lg:col-span-7">
+              <ProcessTimeline />
             </div>
           </div>
         </div>

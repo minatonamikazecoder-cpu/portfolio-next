@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -82,7 +83,12 @@ export default function ContactPage() {
                   </h3>
 
                   {status === "success" ? (
-                    <div className="bg-green-50 border border-green-200 text-green-800 p-6 rounded-xl text-center">
+                    <motion.div 
+                      className="bg-green-50 border border-green-200 text-green-800 p-6 rounded-xl text-center"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    >
                       <span className="text-3xl block mb-2">🎉</span>
                       <h4 className="font-semibold text-base mb-1">Message Sent Successfully!</h4>
                       <p className="text-sm text-green-700/80">
@@ -94,11 +100,24 @@ export default function ContactPage() {
                       >
                         Send another message
                       </button>
-                    </div>
+                    </motion.div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <motion.form 
+                      onSubmit={handleSubmit} 
+                      className="space-y-6"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                          opacity: 1,
+                          transition: { staggerChildren: 0.1 }
+                        }
+                      }}
+                    >
                       {/* Name */}
-                      <div>
+                      <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
                         <label htmlFor="name" className="block text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2">
                           Full Name
                         </label>
@@ -116,10 +135,10 @@ export default function ContactPage() {
                         {errors.name && (
                           <p className="text-red-500 text-xs mt-1">{errors.name}</p>
                         )}
-                      </div>
+                      </motion.div>
 
                       {/* Email */}
-                      <div>
+                      <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
                         <label htmlFor="email" className="block text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2">
                           Email Address
                         </label>
@@ -137,10 +156,10 @@ export default function ContactPage() {
                         {errors.email && (
                           <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                         )}
-                      </div>
+                      </motion.div>
 
                       {/* Service */}
-                      <div>
+                      <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
                         <label htmlFor="service" className="block text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2">
                           What do you need help with?
                         </label>
@@ -156,10 +175,10 @@ export default function ContactPage() {
                           <option value="migration">Database Migration (MERN to PERN)</option>
                           <option value="other">Other / Custom Ecosystem</option>
                         </select>
-                      </div>
+                      </motion.div>
 
                       {/* Message */}
-                      <div>
+                      <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
                         <label htmlFor="message" className="block text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2">
                           Project Details
                         </label>
@@ -177,22 +196,26 @@ export default function ContactPage() {
                         {errors.message && (
                           <p className="text-red-500 text-xs mt-1">{errors.message}</p>
                         )}
-                      </div>
+                      </motion.div>
 
                       {status === "error" && (
-                        <p className="text-red-500 text-xs">
+                        <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-red-500 text-xs">
                           An error occurred while sending your message. Please try again.
-                        </p>
+                        </motion.p>
                       )}
 
-                      <button
-                        type="submit"
-                        disabled={status === "submitting"}
-                        className="w-full md:w-auto px-8 py-3.5 bg-text-main text-white font-semibold rounded-full text-sm hover:bg-muted/90 transition-all shadow-sm disabled:bg-muted/50 cursor-pointer text-center"
-                      >
-                        {status === "submitting" ? "Sending..." : "Send Message →"}
-                      </button>
-                    </form>
+                      <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                        <motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          type="submit"
+                          disabled={status === "submitting"}
+                          className="w-full md:w-auto px-8 py-3.5 bg-text-main text-white font-semibold rounded-full text-sm hover:bg-muted/90 transition-colors shadow-sm disabled:bg-muted/50 cursor-pointer text-center"
+                        >
+                          {status === "submitting" ? "Sending..." : "Send Message →"}
+                        </motion.button>
+                      </motion.div>
+                    </motion.form>
                   )}
                 </div>
               </AnimateOnScroll>
@@ -207,32 +230,42 @@ export default function ContactPage() {
                     Direct Contact
                   </h4>
                   <div className="space-y-3">
-                    <div>
+                    <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
                       <span className="text-xs text-muted block">Email Address</span>
                       <a
                         href="mailto:hello@flowstack.in"
-                        className="text-sm font-semibold text-text-main hover:text-cta transition-colors"
+                        className="text-sm font-semibold text-text-main hover:text-cta transition-colors inline-block"
                       >
                         hello@flowstack.in
                       </a>
-                    </div>
-                    <div>
+                    </motion.div>
+                    <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
                       <span className="text-xs text-muted block">Direct Chat</span>
                       <a
                         href="#"
-                        className="text-sm font-semibold text-text-main hover:text-cta transition-colors"
+                        className="text-sm font-semibold text-text-main hover:text-cta transition-colors inline-block"
                       >
                         WhatsApp Support
                       </a>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </AnimateOnScroll>
 
               {/* Discovery Call card */}
               <AnimateOnScroll delay={0.25}>
-                <div className="bg-bg-alt/30 border border-border-main p-6 rounded-2xl">
-                  <span className="text-xl block mb-3">📞</span>
+                <motion.div 
+                  className="bg-bg-alt/30 border border-border-main p-6 rounded-2xl cursor-pointer group"
+                  whileHover={{ y: -4, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.05)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <motion.span 
+                    className="text-xl block mb-3 inline-block"
+                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    📞
+                  </motion.span>
                   <h4 className="text-base font-semibold text-text-main mb-2">
                     Book a Discovery Call
                   </h4>
@@ -243,9 +276,9 @@ export default function ContactPage() {
                     href="#"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-text-main hover:text-cta transition-colors"
                   >
-                    Schedule Scoping Session <span>→</span>
+                    Schedule Scoping Session <motion.span className="inline-block" whileHover={{ x: 3 }} transition={{ type: "spring", stiffness: 400 }}>→</motion.span>
                   </a>
-                </div>
+                </motion.div>
               </AnimateOnScroll>
             </div>
           </div>
