@@ -5,8 +5,10 @@ import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
-import ProcessTimeline from "@/components/ProcessTimeline";
-import ParallaxBlobs from "@/components/ParallaxBlobs";
+import dynamic from "next/dynamic";
+
+const ProcessTimeline = dynamic(() => import("@/components/ProcessTimeline"), { ssr: false });
+const ParallaxBlobs = dynamic(() => import("@/components/ParallaxBlobs"), { ssr: false });
 
 export default function Home() {
   const featuredProjects = [
