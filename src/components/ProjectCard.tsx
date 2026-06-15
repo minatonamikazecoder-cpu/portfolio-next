@@ -9,7 +9,6 @@ interface ProjectCardProps {
   category: string;
   status: string;
   tech: string[];
-  imageUrl: string;
 }
 
 export default function ProjectCard({
@@ -18,7 +17,6 @@ export default function ProjectCard({
   category,
   status,
   tech,
-  imageUrl,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);

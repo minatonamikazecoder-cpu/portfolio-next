@@ -4,8 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-
 import CursorGlow from "@/components/CursorGlow";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -35,12 +35,14 @@ export default function RootLayout({
       className={`${dmSans.variable} ${dmSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-text-main font-sans">
-        <CursorGlow />
-        <Navbar />
-        <main className="flex-grow pt-18">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
+        <SmoothScroll>
+          <CursorGlow />
+          <Navbar />
+          <main className="flex-grow pt-18">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

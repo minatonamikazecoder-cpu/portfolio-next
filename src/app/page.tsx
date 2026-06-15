@@ -6,6 +6,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import TextReveal from "@/components/TextReveal";
 import MagneticButton from "@/components/MagneticButton";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import ParallaxBlobs from "@/components/ParallaxBlobs";
 
 export default function Home() {
   const featuredProjects = [
@@ -69,11 +70,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* ── HERO ── */}
       <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-bg to-bg-alt/40 py-20 overflow-hidden">
-        {/* Decorative subtle background shapes */}
-        <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-cta/5 blur-3xl pointer-events-none animate-float" />
-        <div className="absolute bottom-[10%] left-[-5%] w-[250px] h-[250px] rounded-full bg-cta/3 blur-3xl pointer-events-none animate-drift" />
+        {/* Decorative subtle background shapes with Parallax */}
+        <ParallaxBlobs />
         
-        <div className="container-max w-full">
+        <div className="container-max w-full relative z-10">
           <div className="max-w-3xl">
             <AnimateOnScroll delay={0} variant="fade-down">
               <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-4">
@@ -140,7 +140,7 @@ export default function Home() {
               </AnimateOnScroll>
               <AnimateOnScroll delay={0.25} variant="fade-left">
                 <p className="text-muted text-base leading-relaxed">
-                  Whether it's rewriting legacy code into scalable **TypeScript**, migrating databases from **MongoDB to PostgreSQL** for better integrity, or launching cross-platform **Flutter** apps, we ensure your codebase is structured for long-term growth.
+                  Whether it&apos;s rewriting legacy code into scalable **TypeScript**, migrating databases from **MongoDB to PostgreSQL** for better integrity, or launching cross-platform **Flutter** apps, we ensure your codebase is structured for long-term growth.
                 </p>
               </AnimateOnScroll>
               <AnimateOnScroll delay={0.35} variant="fade-left">
@@ -170,7 +170,7 @@ export default function Home() {
                 Our Capabilities
               </h2>
               <p className="text-muted text-base">
-                We specialize in engineering robust web applications, cross-platform mobile apps, and handling database migrations to support your company's scale.
+                We specialize in engineering robust web applications, cross-platform mobile apps, and handling database migrations to support your company&apos;s scale.
               </p>
             </AnimateOnScroll>
           </div>

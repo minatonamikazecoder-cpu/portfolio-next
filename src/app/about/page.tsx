@@ -1,5 +1,8 @@
+"use client";
+
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const values = [
@@ -60,7 +63,7 @@ export default function AboutPage() {
               Who We Are
             </h1>
             <p className="text-muted text-base md:text-lg max-w-xl leading-relaxed">
-              We're a lightweight digital engineering studio focused on custom software development, clean system architectures, and reliable database designs.
+              We&apos;re a lightweight digital engineering studio focused on custom software development, clean system architectures, and reliable database designs.
             </p>
           </AnimateOnScroll>
         </div>
@@ -108,13 +111,26 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((v, index) => (
               <AnimateOnScroll key={v.title} delay={index * 0.15}>
-                <div className="bg-surface border border-border-main rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <div className="text-cta text-2xl font-bold mb-4">{v.icon}</div>
+                <motion.div 
+                  className="bg-surface border border-border-main rounded-2xl p-8 shadow-sm h-full flex flex-col cursor-pointer"
+                  whileHover={{
+                    y: -6,
+                    boxShadow: "0 20px 40px -12px rgba(0,0,0,0.08)",
+                    transition: { type: "spring", stiffness: 300, damping: 20 },
+                  }}
+                >
+                  <motion.div 
+                    className="text-cta text-2xl font-bold mb-4 w-12 h-12 rounded-xl bg-bg-alt flex items-center justify-center"
+                    whileHover={{ rotate: 8, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  >
+                    {v.icon}
+                  </motion.div>
                   <h4 className="font-heading text-lg font-semibold text-text-main mb-3">
                     {v.title}
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">{v.desc}</p>
-                </div>
+                </motion.div>
               </AnimateOnScroll>
             ))}
           </div>
@@ -143,13 +159,17 @@ export default function AboutPage() {
                     {cat.title}
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill) => (
-                      <span
+                    {cat.skills.map((skill, i) => (
+                      <motion.span
                         key={skill}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 + i * 0.05, type: "spring", stiffness: 300 }}
                         className="text-xs font-medium px-3 py-1 rounded-full bg-surface border border-border-main text-text-secondary hover:bg-text-main hover:text-white transition-colors duration-200"
                       >
                         {skill}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </div>

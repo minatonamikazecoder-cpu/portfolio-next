@@ -51,11 +51,11 @@ export default function ProcessTimeline() {
       {/* Animated active line (drawn on scroll) */}
       <motion.div 
         className="absolute top-2 left-5 w-[2px] bg-text-main z-0 origin-top"
-        style={{ height: lineHeight, bottom: "3rem" }} // Stops near the bottom
+        style={{ height: lineHeight }}
       />
 
       <div className="space-y-12">
-        {steps.map((step, index) => (
+        {steps.map((step) => (
           <AnimateOnScroll key={step.num} delay={0.1} variant="fade-left">
             <div className="flex gap-6 items-start relative z-10 group">
               <motion.div 

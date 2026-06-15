@@ -45,7 +45,7 @@ export default function ServiceCard({
 
       {deliverables.length > 0 && (
         <ul className="space-y-2 mb-8">
-          {deliverables.map((item, index) => (
+          {deliverables.map((item) => (
             <motion.li
               key={item}
               className="text-sm text-text-secondary flex items-start gap-2.5"

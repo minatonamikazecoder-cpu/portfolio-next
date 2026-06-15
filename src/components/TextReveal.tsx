@@ -9,7 +9,6 @@ interface TextRevealProps {
   wordClassName?: string;
   delay?: number; // base delay in seconds
   stagger?: number; // stagger per word in seconds
-  as?: "h1" | "h2" | "h3" | "h4" | "p" | "span";
 }
 
 export default function TextReveal({
@@ -18,7 +17,6 @@ export default function TextReveal({
   wordClassName = "",
   delay = 0,
   stagger = 0.04,
-  as: _Component = "h1",
 }: TextRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -60px 0px" });

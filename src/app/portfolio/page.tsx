@@ -99,7 +99,7 @@ export default function PortfolioPage() {
           {filteredProjects.length > 0 ? (
             <motion.div layout className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project, index) => (
+                {filteredProjects.map((project) => (
                   <motion.div
                     layout
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -128,7 +128,7 @@ export default function PortfolioPage() {
                   No Projects Found
                 </h4>
                 <p className="text-muted text-xs">
-                  We're currently expanding this portfolio. Check back shortly!
+                  We&apos;re currently expanding this portfolio. Check back shortly!
                 </p>
               </div>
             </AnimateOnScroll>

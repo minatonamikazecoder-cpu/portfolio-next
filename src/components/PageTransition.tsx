@@ -1,8 +1,24 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useContext, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
+
+function FrozenRouter({ children }: { children: ReactNode }) {
+  const context = useContext(LayoutRouterContext ?? {});
+  const frozen = useRef(context).current;
+
+  if (!frozen) {
+    return <>{children}</>;
+  }
+
+  return (
+    <LayoutRouterContext.Provider value={frozen}>
+      {children}
+    </LayoutRouterContext.Provider>
+  );
+}
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -23,7 +39,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
           ease: [0.16, 1, 0.3, 1],
         }}
       >
-        {children}
+        <FrozenRouter>{children}</FrozenRouter>
       </motion.div>
     </AnimatePresence>
   );

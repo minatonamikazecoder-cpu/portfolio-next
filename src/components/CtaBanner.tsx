@@ -19,7 +19,7 @@ export default function CtaBanner() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            Ready to upgrade your tech stack? Let's talk this week.
+            Ready to upgrade your tech stack? Let&apos;s talk this week.
           </motion.h2>
           <motion.p
             className="text-white/60 text-base md:text-lg mb-8 max-w-md mx-auto relative z-10"
@@ -28,7 +28,7 @@ export default function CtaBanner() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            We'd love to hear about your goals — whether it's a systems migration, a new web platform, or a custom mobile app.
+            We&apos;d love to hear about your goals — whether it&apos;s a systems migration, a new web platform, or a custom mobile app.
           </motion.p>
           <motion.div
             className="relative z-10"
