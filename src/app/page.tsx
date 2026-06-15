@@ -4,6 +4,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import TextReveal from "@/components/TextReveal";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function Home() {
   const featuredProjects = [
@@ -94,18 +95,22 @@ export default function Home() {
             
             <AnimateOnScroll delay={0.65} variant="fade-up">
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/portfolio"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold bg-text-main text-white hover:bg-muted/90 transition-all shadow-md hover:-translate-y-[1px]"
-                >
-                  See Our Work →
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold border border-border-main hover:bg-text-main hover:text-white hover:border-text-main transition-all hover:-translate-y-[1px]"
-                >
-                  Get a Quote
-                </Link>
+                <MagneticButton>
+                  <Link
+                    href="/portfolio"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold bg-text-main text-white hover:bg-muted/90 transition-colors shadow-md"
+                  >
+                    See Our Work →
+                  </Link>
+                </MagneticButton>
+                <MagneticButton>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold border border-border-main hover:bg-text-main hover:text-white hover:border-text-main transition-colors"
+                  >
+                    Get a Quote
+                  </Link>
+                </MagneticButton>
               </div>
             </AnimateOnScroll>
           </div>

@@ -1,3 +1,8 @@
+"use client";
+
+import { useRef, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -15,6 +20,37 @@ export default function ProjectCard({
   tech,
   imageUrl,
 }: ProjectCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Mouse tracking for 3D tilt
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), {
+    stiffness: 200,
+    damping: 20,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), {
+    stiffness: 200,
+    damping: 20,
+  });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+    setIsHovered(false);
+  };
+
   // Determine tag classes based on category
   const getTagStyles = (cat: string) => {
     switch (cat.toLowerCase()) {
@@ -33,7 +69,23 @@ export default function ProjectCard({
   };
 
   return (
-    <div className="bg-surface border border-border-main rounded-2xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+    <motion.div
+      ref={cardRef}
+      className="bg-surface border border-border-main rounded-2xl overflow-hidden flex flex-col h-full group"
+      style={{
+        rotateX,
+        rotateY,
+        transformPerspective: 1000,
+        transformStyle: "preserve-3d",
+      }}
+      whileHover={{
+        boxShadow: "0 25px 50px -12px rgba(0,0,0,0.1)",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
+      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+    >
       {/* Image container */}
       <div className="relative overflow-hidden aspect-[16/10] bg-bg-alt">
         <div className="absolute top-4 left-4 z-10">
@@ -48,12 +100,20 @@ export default function ProjectCard({
         </div>
         
         {/* Placeholder image representation with visual styling */}
-        <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center transition-transform duration-500 group-hover:scale-[1.03] bg-gradient-to-br from-bg-alt to-border-main/40">
-          <div className="text-4xl mb-2 opacity-80 group-hover:scale-110 transition-transform duration-300">
+        <motion.div
+          className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-bg-alt to-border-main/40"
+          animate={{ scale: isHovered ? 1.05 : 1 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.div
+            className="text-4xl mb-2 opacity-80"
+            animate={{ scale: isHovered ? 1.2 : 1, rotate: isHovered ? 5 : 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+          >
             {category.toLowerCase().includes("web") ? "💻" : category.toLowerCase().includes("app") ? "📱" : "⚙️"}
-          </div>
+          </motion.div>
           <span className="font-heading text-lg font-medium text-text-main/70">{title}</span>
-        </div>
+        </motion.div>
       </div>
 
       {/* Body content */}
@@ -65,18 +125,27 @@ export default function ProjectCard({
           {description}
         </p>
         
-        {/* Tech Badges */}
+        {/* Tech Badges with stagger */}
         <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-border-main/50">
-          {tech.map((item) => (
-            <span
+          {tech.map((item, index) => (
+            <motion.span
               key={item}
-              className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-bg-alt text-text-secondary hover:bg-text-main hover:text-white transition-colors duration-200"
+              className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-bg-alt text-text-secondary hover:bg-text-main hover:text-white transition-colors duration-200 cursor-default"
+              initial={false}
+              animate={isHovered ? { y: 0, opacity: 1 } : {}}
+              transition={{
+                delay: index * 0.03,
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
+              whileHover={{ scale: 1.08 }}
             >
               {item}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -3,6 +3,7 @@ import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -33,7 +34,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-bg text-text-main font-sans">
         <Navbar />
-        <main className="flex-grow pt-18">{children}</main>
+        <main className="flex-grow pt-18">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,14 +18,23 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               {["LinkedIn", "GitHub", "Behance", "Instagram"].map((platform) => (
-                <a
+                <motion.a
                   key={platform}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-xs text-white/60 hover:bg-white/10 hover:text-white hover:border-white/30 transition-all"
+                  className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-xs text-white/60"
                   aria-label={platform}
+                  whileHover={{
+                    scale: 1.15,
+                    backgroundColor: "rgba(255,255,255,0.1)",
+                    color: "rgba(255,255,255,1)",
+                    borderColor: "rgba(255,255,255,0.3)",
+                    rotate: [0, -8, 8, 0],
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
                   {platform.substring(0, 2).toLowerCase()}
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -40,13 +52,18 @@ export default function Footer() {
                 { name: "About", href: "/about" },
                 { name: "Contact", href: "/contact" },
               ].map((link) => (
-                <Link
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -57,24 +74,33 @@ export default function Footer() {
               Get in Touch
             </div>
             <div className="flex flex-col gap-3">
-              <a
+              <motion.a
                 href="mailto:hello@flowstack.in"
                 className="text-sm text-white/60 hover:text-white transition-colors"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 hello@flowstack.in
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="#"
                 className="text-sm text-white/60 hover:text-white transition-colors"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 WhatsApp
-              </a>
-              <Link
-                href="/contact"
-                className="text-sm text-white/60 hover:text-white transition-colors"
+              </motion.a>
+              <motion.div
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                Contact Form
-              </Link>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  Contact Form
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>
