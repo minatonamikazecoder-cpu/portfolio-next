@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050505;
-  --color-bg-alt: #0a0a0a;
-  --color-surface: #111111;
-  --color-border-main: #222222;
-  --color-text-main: #fcfcfc;
-  --color-text-secondary: #a1a1aa;
-  --color-muted: #52525b;
-  --color-cta: #00f0ff;
-  --color-cta-hover: #00c3d0;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-border-main: #EAEAEA;
+  --color-text-main: #000000;
+  --color-text-secondary: #666666;
+  --color-muted: #888888;
+  --color-cta: #000000;
+  --color-cta-hover: #1F2937;
   
   --font-heading: var(--font-heading);
   --font-sans: var(--font-sans);
@@ -17,8 +17,8 @@
 }
 
 :root {
-  --background: #050505;
-  --foreground: #fcfcfc;
+  --background: #FFFFFF;
+  --foreground: #000000;
 }
 
 body {
@@ -44,48 +44,13 @@ html {
 
 .bg-grid-pattern {
   background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  background-image: linear-gradient(to right, rgba(9, 9, 11, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 9, 11, 0.03) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
   background-size: 20px 20px;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at center, black, transparent 80%);
-}
-
-/* Ambient Animations (CSS-driven, always running) */
-@keyframes float {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-15px) scale(1.05);
-  }
-  100% {
-    transform: translateY(0px) scale(1);
-  }
-}
-
-@keyframes drift {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  50% {
-    transform: translate(10px, 15px) rotate(3deg);
-  }
-  100% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-}
-
-.animate-float {
-  animation: float 8s ease-in-out infinite;
-}
-
-.animate-drift {
-  animation: drift 12s ease-in-out infinite;
+  background-image: radial-gradient(circle, rgba(9, 9, 11, 0.05) 1px, transparent 1px);
 }
 
 /* Accessibility */
@@ -98,3 +63,4 @@ html {
     scroll-behavior: auto !important;
   }
 }
+

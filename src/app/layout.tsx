@@ -4,8 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import CursorGlow from "@/components/CursorGlow";
-import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -49,18 +47,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-text-main font-sans">
-        <SmoothScroll>
-          <CursorGlow />
-          <Navbar />
-          <main className="flex-grow pt-18">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-        </SmoothScroll>
+        <Navbar />
+        <main className="flex-grow pt-18">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer />
       </body>
     </html>
   );
 }
+

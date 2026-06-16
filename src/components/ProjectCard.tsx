@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Monitor, Smartphone, Database, Code } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -18,132 +19,113 @@ export default function ProjectCard({
   status,
   tech,
 }: ProjectCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-
-  // Mouse tracking for 3D tilt
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), {
-    stiffness: 200,
-    damping: 20,
-  });
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), {
-    stiffness: 200,
-    damping: 20,
-  });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-    setIsHovered(false);
-  };
 
   // Determine tag classes based on category
   const getTagStyles = (cat: string) => {
-    switch (cat.toLowerCase()) {
-      case "web development":
-      case "web":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
-      case "app development":
-      case "app":
-        return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
-      case "systems migration":
-      case "migration":
-        return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
-      default:
-        return "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300";
+    return "bg-zinc-50 text-zinc-600 border border-zinc-200/60";
+  };
+
+  const getIcon = (cat: string) => {
+    const className = "w-4 h-4 text-cta";
+    if (cat.toLowerCase().includes("web")) return <Monitor className={className} />;
+    if (cat.toLowerCase().includes("app")) return <Smartphone className={className} />;
+    if (cat.toLowerCase().includes("system") || cat.toLowerCase().includes("db") || cat.toLowerCase().includes("migration")) {
+      return <Database className={className} />;
     }
+    return <Code className={className} />;
   };
 
   return (
     <motion.div
-      ref={cardRef}
-      className="bg-surface border border-border-main rounded-2xl overflow-hidden flex flex-col h-full group"
-      style={{
-        rotateX,
-        rotateY,
-        transformPerspective: 1000,
-        transformStyle: "preserve-3d",
-      }}
+      className="bg-surface border border-border-main rounded-xl overflow-hidden flex flex-col h-full group shadow-sm transition-all duration-300 hover:border-cta/30"
       whileHover={{
-        boxShadow: "0 25px 50px -12px rgba(0,0,0,0.1)",
+        y: -4,
+        boxShadow: "0 20px 40px -15px rgba(0,0,0,0.06)",
+        transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
       }}
-      onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image container */}
-      <div className="relative overflow-hidden aspect-[16/10] bg-bg-alt">
+      {/* Image container / visual representation */}
+      <div className="relative overflow-hidden aspect-[16/10] bg-bg-alt border-b border-border-main">
         <div className="absolute top-4 left-4 z-10">
-          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full tracking-wide shadow-sm ${getTagStyles(category)}`}>
+          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm bg-white ${getTagStyles(category)}`}>
             {category}
           </span>
         </div>
         <div className="absolute top-4 right-4 z-10">
-          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-text-main/90 text-white rounded-md shadow-sm">
+          <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 bg-text-main text-white rounded">
             {status}
           </span>
         </div>
         
-        {/* Placeholder image representation with visual styling */}
-        <motion.div
-          className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-bg-alt to-border-main/40"
-          animate={{ scale: isHovered ? 1.05 : 1 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <motion.div
-            className="text-4xl mb-2 opacity-80"
-            animate={{ scale: isHovered ? 1.2 : 1, rotate: isHovered ? 5 : 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-          >
-            {category.toLowerCase().includes("web") ? "💻" : category.toLowerCase().includes("app") ? "📱" : "⚙️"}
-          </motion.div>
-          <span className="font-heading text-lg font-medium text-text-main/70">{title}</span>
-        </motion.div>
+        {/* Visual schematic browser mock */}
+        <div className="w-full h-full p-4 flex flex-col bg-[#F3F4F6] relative group-hover:bg-[#ECEEF2] transition-colors duration-300">
+          {/* Browser header */}
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className="w-2 h-2 rounded-full bg-red-400/80" />
+            <span className="w-2 h-2 rounded-full bg-amber-400/80" />
+            <span className="w-2 h-2 rounded-full bg-green-400/80" />
+            <div className="h-3.5 bg-white/70 rounded w-2/5 ml-2 flex items-center px-2">
+              <span className="text-[7px] text-muted tracking-tight truncate">flowstack.dev/{title.toLowerCase().replace(" ", "-")}</span>
+            </div>
+          </div>
+          
+          {/* Browser viewport mockup content */}
+          <div className="flex-grow bg-white rounded-md border border-border-main/50 p-3 shadow-sm flex flex-col justify-between overflow-hidden relative">
+            <div className="flex items-start gap-2.5">
+              <div className="w-7 h-7 rounded bg-cta/10 flex items-center justify-center flex-shrink-0">
+                {getIcon(category)}
+              </div>
+              <div className="flex-grow space-y-1.5">
+                <div className="h-2.5 bg-text-main/10 rounded w-1/2" />
+                <div className="h-1.5 bg-text-secondary/10 rounded w-5/6" />
+                <div className="h-1.5 bg-text-secondary/10 rounded w-4/5" />
+              </div>
+            </div>
+            
+            {/* Visual Schematic Chart/Blocks */}
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
+                <div className="h-1 bg-text-secondary/10 rounded w-3/4" />
+                <div className="h-2 bg-cta/25 rounded w-1/2" />
+              </div>
+              <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
+                <div className="h-1 bg-text-secondary/10 rounded w-1/2" />
+                <div className="h-2 bg-cta/40 rounded w-2/3" />
+              </div>
+              <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
+                <div className="h-1 bg-text-secondary/10 rounded w-5/6" />
+                <div className="h-1.5 bg-cta/15 rounded w-1/3" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Body content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h4 className="font-heading text-xl text-text-main font-semibold mb-2 group-hover:text-cta transition-colors duration-300">
+        <h4 className="font-heading text-lg text-text-main font-bold mb-2 group-hover:text-cta transition-colors duration-300">
           {title}
         </h4>
-        <p className="text-muted text-sm leading-relaxed mb-6 flex-grow">
+        <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">
           {description}
         </p>
         
-        {/* Tech Badges with stagger */}
-        <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-border-main/50">
-          {tech.map((item, index) => (
-            <motion.span
+        {/* Tech Badges */}
+        <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-border-main">
+          {tech.map((item) => (
+            <span
               key={item}
-              className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-bg-alt text-text-secondary hover:bg-text-main hover:text-white transition-colors duration-200 cursor-default"
-              initial={false}
-              animate={isHovered ? { y: 0, opacity: 1 } : {}}
-              transition={{
-                delay: index * 0.03,
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              }}
-              whileHover={{ scale: 1.08 }}
+              className="text-[10px] font-semibold px-2 py-0.5 rounded bg-bg-alt text-text-secondary hover:bg-cta hover:text-white transition-colors duration-200 cursor-default"
             >
               {item}
-            </motion.span>
+            </span>
           ))}
         </div>
       </div>
     </motion.div>
   );
 }
+

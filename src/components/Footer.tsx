@@ -1,47 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { Linkedin, Github, Instagram, Globe } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const socials = [
+    { name: "LinkedIn", href: "#", icon: Linkedin },
+    { name: "GitHub", href: "#", icon: Github },
+    { name: "Instagram", href: "#", icon: Instagram },
+  ];
+
   return (
-    <footer className="bg-text-main text-white py-16 mt-auto">
+    <footer className="bg-[#18181B] text-zinc-100 py-16 mt-auto border-t border-zinc-800">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand block */}
           <div>
-            <div className="font-heading text-2xl font-semibold mb-4">FlowStack</div>
-            <p className="text-white/50 text-sm max-w-xs leading-relaxed">
+            <div className="font-heading text-2xl font-bold mb-4 tracking-tight">FlowStack</div>
+            <p className="text-zinc-400 text-sm max-w-xs leading-relaxed">
               Building digital products. We design, develop, and scale custom web and mobile ecosystems — from concept to launch.
             </p>
             <div className="flex gap-4 mt-6">
-              {["LinkedIn", "GitHub", "Behance", "Instagram"].map((platform) => (
-                <motion.a
-                  key={platform}
-                  href="#"
-                  className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-xs text-white/60"
-                  aria-label={platform}
-                  whileHover={{
-                    scale: 1.15,
-                    backgroundColor: "rgba(255,255,255,0.1)",
-                    color: "rgba(255,255,255,1)",
-                    borderColor: "rgba(255,255,255,0.3)",
-                    rotate: [0, -8, 8, 0],
-                  }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                >
-                  {platform.substring(0, 2).toLowerCase()}
-                </motion.a>
-              ))}
+              {socials.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="w-9 h-9 rounded-md border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors"
+                    aria-label={social.name}
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
           {/* Quick links */}
           <div>
-            <div className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-6">
+            <div className="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-6">
               Quick Links
             </div>
             <div className="flex flex-col gap-3">
@@ -52,63 +52,53 @@ export default function Footer() {
                 { name: "About", href: "/about" },
                 { name: "Contact", href: "/contact" },
               ].map((link) => (
-                <motion.div
-                  key={link.name}
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
+                <div key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 hover:text-white transition-colors"
+                    className="text-sm text-zinc-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
           {/* Contact info */}
           <div>
-            <div className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-6">
+            <div className="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-6">
               Get in Touch
             </div>
             <div className="flex flex-col gap-3">
-              <motion.a
+              <a
                 href="mailto:hello@flowstack.in"
-                className="text-sm text-white/60 hover:text-white transition-colors"
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="text-sm text-zinc-400 hover:text-white transition-colors"
               >
                 hello@flowstack.in
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="#"
-                className="text-sm text-white/60 hover:text-white transition-colors"
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="text-sm text-zinc-400 hover:text-white transition-colors"
               >
                 WhatsApp
-              </motion.a>
-              <motion.div
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
+              </a>
+              <div>
                 <Link
                   href="/contact"
-                  className="text-sm text-white/60 hover:text-white transition-colors"
+                  className="text-sm text-zinc-400 hover:text-white transition-colors"
                 >
                   Contact Form
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 text-center text-xs text-white/35">
+        <div className="mt-16 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-600">
           © {currentYear} FlowStack. All rights reserved.
         </div>
       </div>
     </footer>
   );
 }
+

@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
 interface ServiceCardProps {
   id: string;
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
   deliverables: string[];
@@ -20,55 +21,48 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <motion.div
-      className="bg-surface border border-border-main rounded-none p-8 flex flex-col h-full group cursor-pointer relative overflow-hidden"
+      className="bg-surface border border-border-main/60 rounded-xl p-8 flex flex-col h-full group cursor-pointer relative overflow-hidden transition-all duration-300 hover:border-cta/20 shadow-[0_8px_30px_rgb(0,0,0,0.015)]"
       whileHover={{
         y: -4,
-        boxShadow: "0 10px 30px -10px rgba(0,240,255,0.15)",
-        borderColor: "rgba(0,240,255,0.4)",
-        transition: { type: "spring", stiffness: 300, damping: 20 },
+        boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.06)",
+        transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
       }}
     >
-      <div className="absolute top-0 left-0 w-[2px] h-0 bg-cta group-hover:h-full transition-all duration-300 ease-out" />
+      <div className="absolute top-0 left-0 w-1.5 h-0 bg-cta group-hover:h-full transition-all duration-300 ease-out" />
       
-      <motion.div
-        className="w-12 h-12 border border-border-main bg-bg rounded-none flex items-center justify-center text-2xl mb-6 group-hover:border-cta group-hover:text-cta transition-colors duration-300"
-        whileHover={{ rotate: 90, scale: 1.1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
-      >
+      <div className="w-12 h-12 border border-border-main/80 bg-bg-alt rounded-xl flex items-center justify-center text-cta mb-6 group-hover:bg-cta/5 group-hover:border-cta/35 transition-all duration-300">
         {icon}
-      </motion.div>
+      </div>
 
-      <h4 className="font-heading text-xl text-text-main font-bold mb-3 uppercase tracking-tight">
+      <h4 className="font-heading text-lg text-text-main font-bold mb-3 uppercase tracking-tight">
         {title}
       </h4>
 
-      <p className="text-muted text-sm leading-relaxed mb-6 font-mono">
+      <p className="text-text-secondary text-sm leading-relaxed mb-6">
         {description}
       </p>
 
       {deliverables.length > 0 && (
         <ul className="space-y-3 mb-8">
           {deliverables.map((item) => (
-            <motion.li
+            <li
               key={item}
-              className="text-xs font-mono text-text-secondary flex items-start gap-2.5"
-              initial={{ opacity: 0.8 }}
-              whileHover={{ x: 4, opacity: 1, color: "#fcfcfc" }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="text-xs text-text-secondary flex items-start gap-2.5 transition-colors duration-200 hover:text-text-main"
             >
-              <span className="text-cta flex-shrink-0">::</span>
+              <ChevronRight className="text-cta flex-shrink-0 w-3.5 h-3.5 mt-0.5" />
               <span>{item}</span>
-            </motion.li>
+            </li>
           ))}
         </ul>
       )}
 
       <Link
         href={`/services#${id}`}
-        className="text-xs font-mono font-bold text-muted inline-flex items-center gap-1.5 hover:text-cta transition-all mt-auto tracking-widest uppercase"
+        className="text-xs font-semibold text-muted inline-flex items-center gap-1.5 hover:text-cta transition-colors mt-auto tracking-wider uppercase"
       >
-        [ Execute_Detail ]
+        Learn More →
       </Link>
     </motion.div>
   );
 }
+

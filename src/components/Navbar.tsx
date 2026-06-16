@@ -55,20 +55,16 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      <nav
         className={`fixed top-0 left-0 right-0 z-50 h-18 flex items-center transition-all duration-300 ${
           isScrolled
-            ? "bg-bg/92 backdrop-blur-md shadow-sm border-b border-border-main/50"
+            ? "bg-bg/92 backdrop-blur-md shadow-sm border-b border-border-main"
             : "bg-transparent"
         }`}
       >
         <div className="container-max w-full flex items-center justify-between">
-          <Link href="/" className="font-mono text-xl text-text-main font-bold tracking-tighter uppercase flex items-center gap-2">
-            <span className="w-3 h-3 rounded-none bg-cta shadow-[0_0_10px_rgba(0,240,255,0.8)]" />
-            FLOWSTACK_
+          <Link href="/" className="font-heading text-xl text-text-main font-bold tracking-tight flex items-center gap-2">
+            FlowStack
           </Link>
 
           {/* Desktop Links */}
@@ -79,7 +75,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs font-mono tracking-widest uppercase transition-colors relative py-1 hover:text-text-main ${
+                  className={`text-xs font-semibold tracking-wider uppercase transition-colors relative py-1 hover:text-text-main ${
                     isActive ? "text-text-main" : "text-muted"
                   }`}
                 >
@@ -87,7 +83,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="navbar-active-indicator"
-                      className="absolute bottom-[-4px] left-0 w-full h-[1px] bg-cta shadow-[0_0_8px_rgba(0,240,255,0.8)]"
+                      className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-cta"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -97,18 +93,12 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-md text-xs font-semibold tracking-wide bg-cta text-white hover:bg-cta-hover transition-colors"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-none text-xs font-mono font-bold tracking-wide border border-border-main text-text-secondary hover:bg-surface hover:text-white transition-colors uppercase"
-              >
-                INIT_QUOTE
-              </Link>
-            </motion.div>
+              Get a Quote
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -134,7 +124,7 @@ export default function Navbar() {
             />
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -166,9 +156,9 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold bg-text-main text-white hover:bg-muted transition-all mt-4"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-md text-sm font-semibold bg-cta text-white hover:bg-cta-hover transition-colors mt-4"
               >
-                Get a Quote →
+                Get a Quote
               </Link>
             </motion.div>
           </motion.div>
