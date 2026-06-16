@@ -7,7 +7,17 @@
     "category": "Web Development",
     "status": "In Development",
     "tech": ["React", "TypeScript", "PostgreSQL", "Node.js", "Express", "Tailwind CSS"],
-    "featured": true
+    "featured": true,
+    "caseStudy": {
+      "overview": "FreshCart is a high-traffic online grocery delivery service. As the platform scaled, the initial MongoDB database structure led to serious data inconsistency issues, missing relationships, and slow complex queries. The frontend codebase, written in un-typed JavaScript, suffered from frequent runtime bugs and slow rendering speeds.",
+      "challenge": "The main challenges were three-fold: first, migrating hundreds of thousands of documents from MongoDB to PostgreSQL without causing service downtime; second, refactoring a massive legacy JavaScript codebase into strict TypeScript to prevent runtime type errors; and third, optimizing frontend bundle sizes to improve load times for users on low-bandwidth mobile connections.",
+      "solution": "We designed and executed a phased migration database strategy using structured PostgreSQL schemas with strict foreign key constraints. We completely refactored the backend controllers and utility functions into TypeScript. On the frontend, we migrated to a modern Next.js structure and optimized asset loading.",
+      "results": [
+        "40% improvement in page load speeds and overall rendering latency.",
+        "Zero data loss or schema inconsistencies during database migration.",
+        "99.9% reduction in runtime frontend errors due to strict type checking."
+      ]
+    }
   },
   {
     "slug": "freshcart-mobile",
@@ -17,7 +27,17 @@
     "category": "App Development",
     "status": "In Active Beta",
     "tech": ["Flutter", "Dart", "PostgreSQL", "Node.js", "Express", "REST API"],
-    "featured": true
+    "featured": true,
+    "caseStudy": {
+      "overview": "To complement their web storefront, FreshCart needed native mobile applications for iOS and Android. The apps had to synchronize real-time inventory, user shopping carts, and order states with the same database backend used by the web application.",
+      "challenge": "Maintaining separate Swift and Kotlin codebases would have doubled development costs and slowed release cycles. We needed a single cross-platform codebase that didn't compromise on native feel, interface smoothness, or complex state management (like local caching of shopping carts and push notification triggers).",
+      "solution": "We developed native-quality mobile apps using Flutter and Dart. We implemented clean state management using the BLoC pattern, separating UI components from business logic. We unified the authentication layer across web and mobile using secure JWT storage and built custom HTTP middleware to handle offline-first cart syncing.",
+      "results": [
+        "Single codebase reduced overall development time and cost by 50%.",
+        "Consistent 60 FPS scrolling and transition performance on both iOS and Android.",
+        "Secure local offline storage allows users to browse products and modify carts without active internet."
+      ]
+    }
   },
   {
     "slug": "appointy-platform",
@@ -27,6 +47,16 @@
     "category": "Systems Migration",
     "status": "Internal Beta",
     "tech": ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "JWT Auth"],
-    "featured": true
+    "featured": true,
+    "caseStudy": {
+      "overview": "Appointy is a SaaS clinic management system. It hosts three distinct user portals: patients booking appointments, doctors managing schedules and leave requests, and clinic administrators overseeing high-level performance analytics.",
+      "challenge": "Securing separate dashboard panels with different access permissions while maintaining a single, unified API codebase was a primary challenge. We also had to build a complex booking scheduler that checks doctor availability in real-time, preventing scheduling conflicts or booking slots during weekend leaves.",
+      "solution": "We designed a robust Role-Based Access Control (RBAC) middleware system to authorize endpoints. We implemented a unified scheduling engine on the backend that dynamically calculates slot availability by combining doctor weekly hours, booked appointments, and approved leaves. The frontend was built with React and Tailwind CSS.",
+      "results": [
+        "Robust RBAC prevents unauthorized access to admin and clinical data.",
+        "Zero-conflict scheduling engine eliminated double-bookings completely.",
+        "Clean, uniform API handles thousands of simultaneous request calculations."
+      ]
+    }
   }
 ]

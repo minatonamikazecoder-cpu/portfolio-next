@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Monitor, Smartphone, Database, Code } from "lucide-react";
+import Link from "next/link";
 
 interface ProjectCardProps {
+  slug: string;
   title: string;
   description: string;
   category: string;
@@ -13,16 +14,15 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({
+  slug,
   title,
   description,
   category,
   status,
   tech,
 }: ProjectCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   // Determine tag classes based on category
-  const getTagStyles = (cat: string) => {
+  const getTagStyles = () => {
     return "bg-zinc-50 text-zinc-600 border border-zinc-200/60";
   };
 
@@ -37,20 +37,19 @@ export default function ProjectCard({
   };
 
   return (
-    <motion.div
-      className="bg-surface border border-border-main rounded-xl overflow-hidden flex flex-col h-full group shadow-sm transition-all duration-300 hover:border-cta/30"
-      whileHover={{
-        y: -4,
-        boxShadow: "0 20px 40px -15px rgba(0,0,0,0.06)",
-        transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <Link href={`/portfolio/${slug}`} className="block h-full">
+      <motion.div
+        className="bg-surface border border-border-main rounded-xl overflow-hidden flex flex-col h-full group shadow-sm transition-all duration-300 hover:border-cta/35 cursor-pointer"
+        whileHover={{
+          y: -4,
+          boxShadow: "0 20px 40px -15px rgba(0,0,0,0.06)",
+          transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+        }}
+      >
       {/* Image container / visual representation */}
       <div className="relative overflow-hidden aspect-[16/10] bg-bg-alt border-b border-border-main">
         <div className="absolute top-4 left-4 z-10">
-          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm bg-white ${getTagStyles(category)}`}>
+          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm bg-white ${getTagStyles()}`}>
             {category}
           </span>
         </div>
@@ -126,6 +125,7 @@ export default function ProjectCard({
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 }
 

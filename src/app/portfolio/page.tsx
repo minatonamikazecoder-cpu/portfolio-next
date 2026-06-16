@@ -32,6 +32,7 @@ export default function PortfolioPage() {
               {projectsData.map((project) => (
                 <ProjectCard
                   key={project.title}
+                  slug={project.slug}
                   title={project.title}
                   description={project.description}
                   category={project.category}
@@ -47,7 +48,7 @@ export default function PortfolioPage() {
                 No Projects Found
               </h4>
               <p className="text-text-secondary text-xs">
-                We're currently expanding this portfolio. Check back shortly!
+                {"We're currently expanding this portfolio. Check back shortly!"}
               </p>
             </div>
           )}

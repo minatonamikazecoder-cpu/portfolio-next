@@ -63,7 +63,7 @@ export default function AboutPage() {
               Who We Are
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl leading-relaxed">
-              We're a lightweight digital engineering studio focused on custom software development, clean system architectures, and reliable database designs.
+              {"We're a lightweight digital engineering studio focused on custom software development, clean system architectures, and reliable database designs."}
             </p>
           </AnimateOnScroll>
         </div>

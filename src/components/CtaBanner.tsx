@@ -11,7 +11,7 @@ export default function CtaBanner() {
         </h2>
         
         <p className="text-text-secondary text-base max-w-xl mx-auto mb-10 leading-relaxed">
-          Let's design, develop, and scale your next digital product together. Get in touch for a custom consultation.
+          {"Let's design, develop, and scale your next digital product together. Get in touch for a custom consultation."}
         </p>
 
         <Link

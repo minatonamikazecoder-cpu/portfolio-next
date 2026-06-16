@@ -85,7 +85,7 @@ export default function Home() {
                 Our Capabilities
               </h2>
               <p className="text-text-secondary text-base">
-                We specialize in engineering robust web applications, cross-platform mobile apps, and handling database migrations to support your company's scale.
+                {"We specialize in engineering robust web applications, cross-platform mobile apps, and handling database migrations to support your company's scale."}
               </p>
             </AnimateOnScroll>
           </div>
@@ -126,6 +126,7 @@ export default function Home() {
             {featuredProjects.map((project) => (
               <ProjectCard
                 key={project.title}
+                slug={project.slug}
                 title={project.title}
                 description={project.summary}
                 category={project.category}

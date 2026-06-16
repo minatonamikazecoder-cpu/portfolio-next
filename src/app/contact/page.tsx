@@ -60,10 +60,10 @@ export default function ContactPage() {
               Contact
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
-              Let's Start a Project
+              {"Let's Start a Project"}
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl leading-relaxed">
-              Have a project in mind, need a migration, or want to discuss a custom ecosystem? Reach out and we'll reply within 24 hours.
+              {"Have a project in mind, need a migration, or want to discuss a custom ecosystem? Reach out and we'll reply within 24 hours."}
             </p>
           </AnimateOnScroll>
         </div>
@@ -242,7 +242,7 @@ export default function ContactPage() {
                     Book a Discovery Call
                   </h4>
                   <p className="text-text-secondary text-xs leading-relaxed mb-4">
-                    Prefer to explain your product over a video call? Book a free 15-minute scoping call, and let's discuss your database, UI, and tech requirements directly.
+                    {"Prefer to explain your product over a video call? Book a free 15-minute scoping call, and let's discuss your database, UI, and tech requirements directly."}
                   </p>
                   <a
                     href="#"
