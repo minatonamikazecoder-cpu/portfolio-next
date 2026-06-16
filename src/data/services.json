@@ -1,0 +1,38 @@
+[
+  {
+    "id": "web-development",
+    "title": "Web Development",
+    "summary": "Custom, high-performance web applications built with React, TypeScript, and modern frameworks. Optimized for security, scale, and SEO.",
+    "description": "We build fast, secure, and responsive web applications using React, TypeScript, and modern frameworks. We specialize in dynamic client dashboards and custom database integrations.",
+    "deliverables": [
+      "Full-stack React & Node.js development",
+      "TypeScript codebase refactoring for type safety",
+      "E-commerce catalogue and checkouts",
+      "Custom REST and GraphQL APIs"
+    ]
+  },
+  {
+    "id": "app-development",
+    "title": "App Development",
+    "summary": "Cross-platform mobile applications built with Flutter. Write once, run beautifully on both iOS and Android with a native look and feel.",
+    "description": "Launch cross-platform mobile apps for iOS and Android using Flutter. Write once and maintain a single codebase, drastically reducing your development costs and launch times.",
+    "deliverables": [
+      "iOS & Android Development via Flutter",
+      "Clean state management (Bloc/Provider)",
+      "Unified API integrations for web & mobile",
+      "App Store & Google Play deployment support"
+    ]
+  },
+  {
+    "id": "systems-migration",
+    "title": "Systems & DB Migrations",
+    "summary": "Scaling existing applications by moving from NoSQL databases (like MongoDB) to robust Relational databases (like PostgreSQL) for reliability.",
+    "description": "Upgrading legacy codebases and migrating database architectures. We move data safely from NoSQL (MongoDB) to relational SQL (PostgreSQL) schemas to prevent integrity issues.",
+    "deliverables": [
+      "NoSQL to Relational SQL migrations",
+      "Data schema normalization & constraints",
+      "API backend performance tuning",
+      "Zero-downtime deployment pipelines"
+    ]
+  }
+]

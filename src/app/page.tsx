@@ -5,64 +5,24 @@ import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import { Monitor, Smartphone, Database } from "lucide-react";
+import projectsData from "@/data/projects.json";
+import servicesData from "@/data/services.json";
 
 export default function Home() {
-  const featuredProjects = [
-    {
-      title: "FreshCart Web",
-      description:
-        "Migrated a high-traffic grocery store application from a MERN stack to a PERN stack (PostgreSQL + TypeScript) with a complete frontend UI upgrade, yielding 40% faster page speeds.",
-      category: "Web Development",
-      status: "In Development",
-      tech: ["React", "TypeScript", "PostgreSQL", "Node.js", "Express", "Tailwind CSS"],
-      imageUrl: "/images/project-1.jpg",
-    },
-    {
-      title: "FreshCart Mobile",
-      description:
-        "Cross-platform iOS and Android shopping apps built with Flutter, sharing the same unified Node.js/Postgres API backend to handle real-time inventory and order processing with single-codebase efficiency.",
-      category: "App Development",
-      status: "In Active Beta",
-      tech: ["Flutter", "Dart", "PostgreSQL", "Node.js", "Express", "REST API"],
-      imageUrl: "/images/project-2.jpg",
-    },
-    {
-      title: "Appointy Platform",
-      description:
-        "A multi-portal clinical scheduling application with distinct, secure control panels for Administrators, Doctors, and Patients, using role-based access control and 1 unified API backend.",
-      category: "Systems Migration",
-      status: "Internal Beta",
-      tech: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "JWT Auth"],
-      imageUrl: "/images/project-3.jpg",
-    },
-  ];
+  const featuredProjects = projectsData.filter((project) => project.featured);
 
-  const featuredServices = [
-    {
-      id: "web-development",
-      icon: <Monitor className="w-6 h-6" />,
-      title: "Web Development",
-      description:
-        "Custom, high-performance web applications built with React, TypeScript, and modern frameworks. Optimized for security, scale, and SEO.",
-      deliverables: ["Custom Web Apps", "Database Architecture", "TypeScript Refactoring"],
-    },
-    {
-      id: "app-development",
-      icon: <Smartphone className="w-6 h-6" />,
-      title: "App Development",
-      description:
-        "Cross-platform mobile applications built with Flutter. Write once, run beautifully on both iOS and Android with a native look and feel.",
-      deliverables: ["iOS & Android Apps", "Flutter/Dart Codebase", "App Store Deployment"],
-    },
-    {
-      id: "systems-migration",
-      icon: <Database className="w-6 h-6" />,
-      title: "Systems & DB Migrations",
-      description:
-        "Scaling existing applications by moving from NoSQL databases (like MongoDB) to robust Relational databases (like PostgreSQL) for reliability.",
-      deliverables: ["NoSQL to SQL Migrations", "API Unified Backends", "TypeScript Refactoring"],
-    },
-  ];
+  const getServiceIcon = (id: string) => {
+    switch (id) {
+      case "web-development":
+        return <Monitor className="w-6 h-6" />;
+      case "app-development":
+        return <Smartphone className="w-6 h-6" />;
+      case "systems-migration":
+        return <Database className="w-6 h-6" />;
+      default:
+        return <Monitor className="w-6 h-6" />;
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -82,14 +42,14 @@ export default function Home() {
             </AnimateOnScroll>
             
             <AnimateOnScroll delay={0.15} variant="fade-up">
-              <h1 className="font-heading text-5xl md:text-7xl text-text-main font-bold tracking-tight leading-[1.1] mb-6 uppercase">
-                Systems Architecture &amp; Software Engineering
+              <h1 className="font-heading text-5xl md:text-7xl lg:text-[5rem] text-text-main font-bold tracking-tight leading-[1.05] mb-6">
+                Engineering Digital Products That Scale.
               </h1>
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={0.3} variant="fade-up">
               <p className="text-text-secondary text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-                We design, develop, and scale custom web and mobile ecosystems — from concept to production-ready deployments.
+                We build high-performance web applications, cross-platform mobile experiences, and robust backend architectures for modern companies.
               </p>
             </AnimateOnScroll>
             
@@ -131,13 +91,13 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredServices.map((service) => (
+            {servicesData.map((service) => (
               <ServiceCard
                 key={service.id}
                 id={service.id}
-                icon={service.icon}
+                icon={getServiceIcon(service.id)}
                 title={service.title}
-                description={service.description}
+                description={service.summary}
                 deliverables={service.deliverables}
               />
             ))}
@@ -167,7 +127,7 @@ export default function Home() {
               <ProjectCard
                 key={project.title}
                 title={project.title}
-                description={project.description}
+                description={project.summary}
                 category={project.category}
                 status={project.status}
                 tech={project.tech}

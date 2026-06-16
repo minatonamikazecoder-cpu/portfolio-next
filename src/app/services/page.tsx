@@ -2,49 +2,21 @@ import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Monitor, Smartphone, Database, Code2, Layers, Cpu } from "lucide-react";
+import servicesData from "@/data/services.json";
 
 export default function ServicesPage() {
-  const allServices = [
-    {
-      id: "web-development",
-      icon: <Monitor className="w-6 h-6" />,
-      title: "Web Development",
-      description:
-        "We build fast, secure, and responsive web applications using React, TypeScript, and modern frameworks. We specialize in dynamic client dashboards and custom database integrations.",
-      deliverables: [
-        "Full-stack React & Node.js development",
-        "TypeScript codebase refactoring for type safety",
-        "E-commerce catalogue and checkouts",
-        "Custom REST and GraphQL APIs",
-      ],
-    },
-    {
-      id: "app-development",
-      icon: <Smartphone className="w-6 h-6" />,
-      title: "App Development",
-      description:
-        "Launch cross-platform mobile apps for iOS and Android using Flutter. Write once and maintain a single codebase, drastically reducing your development costs and launch times.",
-      deliverables: [
-        "iOS & Android Development via Flutter",
-        "Clean state management (Bloc/Provider)",
-        "Unified API integrations for web & mobile",
-        "App Store & Google Play deployment support",
-      ],
-    },
-    {
-      id: "systems-migration",
-      icon: <Database className="w-6 h-6" />,
-      title: "Systems & DB Migrations",
-      description:
-        "Upgrading legacy codebases and migrating database architectures. We move data safely from NoSQL (MongoDB) to relational SQL (PostgreSQL) schemas to prevent integrity issues.",
-      deliverables: [
-        "NoSQL to Relational SQL migrations",
-        "Data schema normalization & constraints",
-        "API backend performance tuning",
-        "Zero-downtime deployment pipelines",
-      ],
-    },
-  ];
+  const getServiceIcon = (id: string) => {
+    switch (id) {
+      case "web-development":
+        return <Monitor className="w-6 h-6" />;
+      case "app-development":
+        return <Smartphone className="w-6 h-6" />;
+      case "systems-migration":
+        return <Database className="w-6 h-6" />;
+      default:
+        return <Monitor className="w-6 h-6" />;
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -55,7 +27,7 @@ export default function ServicesPage() {
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-3">
               What We Do
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4 uppercase">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
               Our Services
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl leading-relaxed">
@@ -69,11 +41,11 @@ export default function ServicesPage() {
       <section className="py-20 bg-surface">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {allServices.map((service) => (
+            {servicesData.map((service) => (
               <ServiceCard
                 key={service.id}
                 id={service.id}
-                icon={service.icon}
+                icon={getServiceIcon(service.id)}
                 title={service.title}
                 description={service.description}
                 deliverables={service.deliverables}

@@ -13,13 +13,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#18181B] text-zinc-100 py-16 mt-auto border-t border-zinc-800">
+    <footer className="bg-bg text-text-main py-16 mt-auto border-t border-border-main">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand block */}
           <div>
             <div className="font-heading text-2xl font-bold mb-4 tracking-tight">FlowStack</div>
-            <p className="text-zinc-400 text-sm max-w-xs leading-relaxed">
+            <p className="text-text-secondary text-sm max-w-xs leading-relaxed">
               Building digital products. We design, develop, and scale custom web and mobile ecosystems — from concept to launch.
             </p>
             <div className="flex gap-4 mt-6">
@@ -29,7 +29,7 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-9 h-9 rounded-md border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors"
+                    className="w-9 h-9 rounded-md border border-border-main flex items-center justify-center text-muted hover:text-text-main hover:border-text-secondary transition-colors"
                     aria-label={social.name}
                   >
                     <Icon size={16} />
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <div className="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-6">
+            <div className="text-xs font-semibold tracking-widest uppercase text-muted mb-6">
               Quick Links
             </div>
             <div className="flex flex-col gap-3">
@@ -55,7 +55,7 @@ export default function Footer() {
                 <div key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-400 hover:text-white transition-colors"
+                    className="text-sm text-text-secondary hover:text-text-main transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -66,26 +66,26 @@ export default function Footer() {
 
           {/* Contact info */}
           <div>
-            <div className="text-xs font-semibold tracking-widest uppercase text-zinc-500 mb-6">
+            <div className="text-xs font-semibold tracking-widest uppercase text-muted mb-6">
               Get in Touch
             </div>
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:hello@flowstack.in"
-                className="text-sm text-zinc-400 hover:text-white transition-colors"
+                className="text-sm text-text-secondary hover:text-text-main transition-colors"
               >
                 hello@flowstack.in
               </a>
               <a
                 href="#"
-                className="text-sm text-zinc-400 hover:text-white transition-colors"
+                className="text-sm text-text-secondary hover:text-text-main transition-colors"
               >
                 WhatsApp
               </a>
               <div>
                 <Link
                   href="/contact"
-                  className="text-sm text-zinc-400 hover:text-white transition-colors"
+                  className="text-sm text-text-secondary hover:text-text-main transition-colors"
                 >
                   Contact Form
                 </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-600">
+        <div className="mt-16 pt-8 border-t border-border-main text-center text-xs text-muted">
           © {currentYear} FlowStack. All rights reserved.
         </div>
       </div>

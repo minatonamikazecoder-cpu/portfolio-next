@@ -59,7 +59,7 @@ export default function ContactPage() {
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-3">
               Contact
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4 uppercase">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
               Let's Start a Project
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl leading-relaxed">

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "freshcart-web",
+    "title": "FreshCart Web",
+    "summary": "Migrated a high-traffic grocery store application from a MERN stack to a PERN stack (PostgreSQL + TypeScript) with a complete frontend UI upgrade, yielding 40% faster page speeds.",
+    "description": "Migrating a live grocery e-commerce storefront from MongoDB to PostgreSQL. Refactoring raw JavaScript API endpoints into structural TypeScript. Rewriting frontend views for visual modernism and load speeds.",
+    "category": "Web Development",
+    "status": "In Development",
+    "tech": ["React", "TypeScript", "PostgreSQL", "Node.js", "Express", "Tailwind CSS"],
+    "featured": true
+  },
+  {
+    "slug": "freshcart-mobile",
+    "title": "FreshCart Mobile",
+    "summary": "Cross-platform iOS and Android shopping apps built with Flutter, sharing the same unified Node.js/Postgres API backend to handle real-time inventory and order processing with single-codebase efficiency.",
+    "description": "Developing cross-platform iOS and Android mobile shopping apps sharing the exact same backend database API as the web platform. Focuses on cart states and order flows.",
+    "category": "App Development",
+    "status": "In Active Beta",
+    "tech": ["Flutter", "Dart", "PostgreSQL", "Node.js", "Express", "REST API"],
+    "featured": true
+  },
+  {
+    "slug": "appointy-platform",
+    "title": "Appointy Platform",
+    "summary": "A multi-portal clinical scheduling application with distinct, secure control panels for Administrators, Doctors, and Patients, using role-based access control and 1 unified API backend.",
+    "description": "Built a secure patient scheduling and clinic manager. Features custom access control structures. Patients book, doctors schedule slots, and admins oversee clinic analytics.",
+    "category": "Systems Migration",
+    "status": "Internal Beta",
+    "tech": ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "JWT Auth"],
+    "featured": true
+  }
+]
