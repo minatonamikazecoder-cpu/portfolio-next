@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Monitor, Smartphone, Database, Code2, Layers, Cpu } from "lucide-react";
 import servicesData from "@/data/services.json";
+
+export const metadata: Metadata = {
+  title: "Our Services & Capabilities — FlowStack",
+  description: "Explore our web development, Flutter app engineering, and systems/database migration capabilities.",
+};
 
 export default function ServicesPage() {
   const getServiceIcon = (id: string) => {

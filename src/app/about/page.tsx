@@ -1,8 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Star, MessageSquare, Wrench } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Who We Are — About FlowStack",
+  description: "Learn about our team, our technical values, and our engineering philosophy at FlowStack.",
+};
 
 export default function AboutPage() {
   const values = [
@@ -74,7 +78,7 @@ export default function AboutPage() {
         <div className="container-max">
           <div className="max-w-3xl">
             <AnimateOnScroll variant="fade-up">
-              <h3 className="font-heading text-2xl md:text-3xl text-text-main mb-6 uppercase">
+              <h3 className="font-heading text-2xl md:text-3xl text-text-main mb-6 font-bold tracking-tight">
                 Our Philosophy
               </h3>
             </AnimateOnScroll>
@@ -102,7 +106,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
                 Our Values
               </span>
-              <h2 className="font-heading text-3xl text-text-main uppercase font-bold">
+              <h2 className="font-heading text-3xl text-text-main font-bold tracking-tight">
                 What We Stand For
               </h2>
             </AnimateOnScroll>
@@ -118,7 +122,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-lg bg-bg-alt flex items-center justify-center mb-6 border border-border-main group-hover:border-cta transition-colors duration-300">
                   {v.icon}
                 </div>
-                <h4 className="font-heading text-lg font-bold text-text-main mb-3 uppercase tracking-tight">
+                 <h4 className="font-heading text-lg font-bold text-text-main mb-3 tracking-tight">
                   {v.title}
                 </h4>
                 <p className="text-text-secondary text-sm leading-relaxed">{v.desc}</p>
@@ -136,7 +140,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
                 Capabilities
               </span>
-              <h2 className="font-heading text-3xl text-text-main uppercase font-bold">
+              <h2 className="font-heading text-3xl text-text-main font-bold tracking-tight">
                 What We Work With
               </h2>
             </AnimateOnScroll>
@@ -145,7 +149,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((cat) => (
               <div key={cat.title} className="border border-border-main rounded-xl p-8 bg-bg-alt/30">
-                <h4 className="font-heading text-base font-bold text-text-main mb-4 pb-2 border-b border-border-main uppercase tracking-tight">
+                <h4 className="font-heading text-base font-bold text-text-main mb-4 pb-2 border-b border-border-main tracking-tight">
                   {cat.title}
                 </h4>
                 <div className="flex flex-wrap gap-2">
