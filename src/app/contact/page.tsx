@@ -42,7 +42,18 @@ export default function ContactPage() {
     setStatus("submitting");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
       setStatus("success");
       setForm({ name: "", email: "", service: "web", message: "" });
     } catch {
