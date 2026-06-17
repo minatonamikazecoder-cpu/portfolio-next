@@ -105,9 +105,9 @@ export default function ProjectCard({
 
       {/* Body content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h4 className="font-heading text-lg text-text-main font-bold mb-2 group-hover:text-cta transition-colors duration-300">
+        <h3 className="font-heading text-lg text-text-main font-bold mb-2 group-hover:text-cta transition-colors duration-300">
           {title}
-        </h4>
+        </h3>
         <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">
           {description}
         </p>

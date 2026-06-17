@@ -66,9 +66,9 @@ export default function ProcessTimeline() {
                 {step.num}
               </motion.div>
               <div className="pt-1.5">
-                <h4 className="text-base font-semibold text-text-main mb-1">
+                <h3 className="text-base font-semibold text-text-main mb-1">
                   {step.title}
-                </h4>
+                </h3>
                 <p className="text-muted text-sm leading-relaxed">
                   {step.desc}
                 </p>

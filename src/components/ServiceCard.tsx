@@ -34,9 +34,9 @@ export default function ServiceCard({
         {icon}
       </div>
 
-      <h4 className="font-heading text-lg text-text-main font-bold mb-3 uppercase tracking-tight">
+      <h3 className="font-heading text-lg text-text-main font-bold mb-3 tracking-tight">
         {title}
-      </h4>
+      </h3>
 
       <p className="text-text-secondary text-sm leading-relaxed mb-6">
         {description}
