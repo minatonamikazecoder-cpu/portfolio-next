@@ -19,7 +19,7 @@ export default function ContactPage() {
               Contact
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
-              Let's Start a Project
+              {"Let's Start a Project"}
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl leading-relaxed">
               {"Have a project in mind, need a migration, or want to discuss a custom ecosystem? Reach out and we'll reply within 24 hours."}

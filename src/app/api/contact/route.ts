@@ -49,7 +49,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({ success: true, mock: true });
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error("Contact API route error:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
