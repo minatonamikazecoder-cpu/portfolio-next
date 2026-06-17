@@ -6,9 +6,9 @@ import { ArrowLeft, CheckCircle2, ShieldAlert, Cpu, Award } from "lucide-react";
 import CtaBanner from "@/components/CtaBanner";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = projectsData.find((p) => p.slug === params.slug);
+  const resolvedParams = await params;
+  const project = projectsData.find((p) => p.slug === resolvedParams.slug);
   if (!project) return {};
 
   return {
@@ -32,8 +33,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectsData.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const resolvedParams = await params;
+  const project = projectsData.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
