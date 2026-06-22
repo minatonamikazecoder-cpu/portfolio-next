@@ -23,7 +23,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   // Determine tag classes based on category
   const getTagStyles = () => {
-    return "bg-zinc-50 text-zinc-600 border border-zinc-200/60";
+    return "bg-stone-50 text-stone-600 border border-stone-200/60";
   };
 
   const getIcon = (cat: string) => {
@@ -63,7 +63,7 @@ export default function ProjectCard({
         </div>
         
         {/* Visual schematic browser mock */}
-        <div className="w-full h-full p-4 flex flex-col bg-[#F3F4F6] relative group-hover:bg-[#ECEEF2] transition-colors duration-300">
+        <div className="w-full h-full p-4 flex flex-col bg-[#F5F3EF] relative group-hover:bg-[#EBE8E2] transition-colors duration-300">
           {/* Browser header */}
           <div className="flex items-center gap-1.5 mb-2">
             <span className="w-2 h-2 rounded-full bg-red-400/80" />
