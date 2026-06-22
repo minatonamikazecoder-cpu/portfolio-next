@@ -67,7 +67,7 @@ export default function ProjectCard({
             <span className="w-2 h-2 rounded-full bg-amber-400/80" />
             <span className="w-2 h-2 rounded-full bg-green-400/80" />
             <div className="h-3.5 bg-white/70 rounded w-2/5 ml-2 flex items-center px-2">
-              <span className="text-[7px] text-muted tracking-tight truncate">flowstack.dev/{title.toLowerCase().replace(" ", "-")}</span>
+              <span className="text-[7px] text-muted tracking-tight truncate">mrfreelancer.in/{title.toLowerCase().replace(" ", "-")}</span>
             </div>
           </div>
           

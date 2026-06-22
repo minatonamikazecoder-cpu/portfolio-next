@@ -9,7 +9,29 @@
       "TypeScript codebase refactoring for type safety",
       "E-commerce catalogue and checkouts",
       "Custom REST and GraphQL APIs"
-    ]
+    ],
+    "icon": "monitor",
+    "techStack": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "GraphQL"],
+    "detail": {
+      "heroDescription": "We engineer fast, secure, and responsive web systems designed to support your company's scale. By leveraging React, Next.js App Router, and strict TypeScript, we build interfaces that feel premium and robust backend architectures that ensure your data remains accessible and fast.",
+      "approach": "We follow a component-driven development workflow, building reusable UI libraries and decoupling data layers. Every web app is built with server-side rendering (SSR), optimized images, code-splitting, and minimal bundle sizes to guarantee peak performance and instant page indexing.",
+      "whyUs": [
+        "Component-driven design systems for perfect visual consistency.",
+        "Strict TypeScript configurations to eliminate runtime bugs early.",
+        "Deep expertise in Next.js Server Components, streaming, and optimization.",
+        "Clean, maintainable, and thoroughly documented codebase handovers."
+      ],
+      "process": [
+        { "step": "1", "title": "Discovery & Architecture", "desc": "We analyze your user flows, define system scale points, and map out database collections and API boundaries." },
+        { "step": "2", "title": "Interactive Prototyping", "desc": "We design high-fidelity layouts in Figma, establishing styling tokens, color hierarchies, and interactive UI states." },
+        { "step": "3", "title": "TypeScript Engineering", "desc": "We write dry, clean code with responsive Tailwind classes, dynamic layout transitions, and rigid type contracts." },
+        { "step": "4", "title": "QA & Vercel Deployment", "desc": "We test performance via Lighthouse, audit for accessibility, set up continuous integration, and launch onto a global CDN." }
+      ],
+      "faq": [
+        { "question": "What frameworks do you use for web applications?", "answer": "We primarily build with Next.js, React, and TypeScript. For styling, we use Tailwind CSS or custom CSS variables, and for backends, we use Node.js, Express, NestJS, or serverless Next.js API endpoints depending on scale requirements." },
+        { "question": "Can you take over or upgrade an existing web app?", "answer": "Yes. We regularly help companies refactor existing JS codebases to TypeScript, optimize slow React components, and modernize styling structures without breaking existing production features." }
+      ]
+    }
   },
   {
     "id": "app-development",
@@ -21,7 +43,29 @@
       "Clean state management (Bloc/Provider)",
       "Unified API integrations for web & mobile",
       "App Store & Google Play deployment support"
-    ]
+    ],
+    "icon": "smartphone",
+    "techStack": ["Flutter", "Dart", "BLoC", "Firebase", "App Store Connect", "Play Console"],
+    "detail": {
+      "heroDescription": "We design and develop cross-platform mobile experiences for iOS and Android using Flutter. By maintaining a single unified codebase, we help you launch mobile products at half the cost and time of native setups, without compromising on 60fps animations or native platform integration.",
+      "approach": "We build mobile apps with modular state management (BLoC or Riverpod) to separate UI components from business logic. Every application is optimized for offline-first caching, local SQLite storage, push notifications, and utilizes platform channels for native hardware features.",
+      "whyUs": [
+        "Pixel-perfect implementation of complex gestures and custom animations.",
+        "Modular architecture allowing easy reuse of API callers across web and mobile.",
+        "Experienced in App Store and Google Play publishing guidelines.",
+        "Rigorous unit and widget testing pipelines to prevent regressions."
+      ],
+      "process": [
+        { "step": "1", "title": "Mobile Wireframing", "desc": "We structure app screens, navigation hierarchies, and design responsive views for both compact phones and larger tablets." },
+        { "step": "2", "title": "State Architecture", "desc": "We configure state flows, error fallbacks, and local storage caches to make sure the app handles poor network conditions." },
+        { "step": "3", "title": "Feature Engineering", "desc": "We code the mobile screens using Dart, integrate secure authentication, wire APIs, and build smooth page transitions." },
+        { "step": "4", "title": "Beta & App Launch", "desc": "We release test versions on TestFlight and Google Play Console, fix user feedback, and submit for public launch." }
+      ],
+      "faq": [
+        { "question": "Why use Flutter instead of native Swift or Kotlin?", "answer": "Flutter compiles directly to native ARM machine code, meaning performance is indistinguishable from native apps. Building with Flutter allows you to target both iOS and Android platforms with a single codebase, reducing development and maintenance overhead by up to 50%." },
+        { "question": "Do your mobile apps support offline mode?", "answer": "Yes, we implement offline-first data synchronization. We cache essential data locally using SQLite or Hive databases, allowing users to browse content and prepare updates that sync with the cloud once connection is restored." }
+      ]
+    }
   },
   {
     "id": "systems-migration",
@@ -33,6 +77,28 @@
       "Data schema normalization & constraints",
       "API backend performance tuning",
       "Zero-downtime deployment pipelines"
-    ]
+    ],
+    "icon": "database",
+    "techStack": ["PostgreSQL", "MongoDB", "Prisma ORM", "SQL", "Redis", "Docker"],
+    "detail": {
+      "heroDescription": "We restructure existing database layers and scale legacy systems to handle peak user loads. If your application is suffering from data integrity anomalies in MongoDB, we normalize your entities and safely migrate them to PostgreSQL under strict relational constraints.",
+      "approach": "Database migrations require meticulous planning to avoid data loss or server downtime. We build custom ETL (Extract, Transform, Load) pipelines to validate data consistency, test migration runs on staging copies, and execute production cuts during off-peak windows.",
+      "whyUs": [
+        "Proven experience migrating large production datasets with zero data loss.",
+        "Expertise in SQL query tuning, indexing, and connection pool management.",
+        "Rigorous staging-based schema testing to predict migration behavior.",
+        "Strong understanding of legacy systems and API refactoring patterns."
+      ],
+      "process": [
+        { "step": "1", "title": "Schema Auditing", "desc": "We analyze your existing database, map out relationships, note validation gaps, and construct the target SQL schema." },
+        { "step": "2", "title": "ETL Scripting", "desc": "We write data transformation scripts, map custom MongoDB documents to relational tables, and enforce integrity rules." },
+        { "step": "3", "title": "Staging Dry Run", "desc": "We clone your production database to an isolated environment, run the migration scripts, and audit data correctness." },
+        { "step": "4", "title": "Zero-Downtime Cutover", "desc": "We implement a dual-write system or perform an off-peak maintenance cut, update server environments, and verify live APIs." }
+      ],
+      "faq": [
+        { "question": "Why migrate from NoSQL (MongoDB) to Relational SQL (PostgreSQL)?", "answer": "As applications grow, maintaining complex relationships, data constraints, and transactional consistency (ACID properties) in NoSQL can lead to bugs and data fragmentation. Relational databases like PostgreSQL enforce strict schema validations, foreign key constraints, and perform complex joins significantly faster." },
+        { "question": "Will my app be down during the migration?", "answer": "We design migrations to minimize or eliminate downtime. Depending on the size of the database, we can use dual-writing strategies (writing to both databases during cutover) or perform rapid migrations during scheduled low-traffic hours." }
+      ]
+    }
   }
 ]

@@ -4,25 +4,14 @@ import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import ProcessTimeline from "@/components/ProcessTimeline";
-import { Monitor, Smartphone, Database } from "lucide-react";
+import { getServiceIcon } from "@/lib/service-icons";
 import projectsData from "@/data/projects.json";
 import servicesData from "@/data/services.json";
 
 export default function Home() {
   const featuredProjects = projectsData.filter((project) => project.featured);
 
-  const getServiceIcon = (id: string) => {
-    switch (id) {
-      case "web-development":
-        return <Monitor className="w-6 h-6" />;
-      case "app-development":
-        return <Smartphone className="w-6 h-6" />;
-      case "systems-migration":
-        return <Database className="w-6 h-6" />;
-      default:
-        return <Monitor className="w-6 h-6" />;
-    }
-  };
+
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -95,7 +84,7 @@ export default function Home() {
               <ServiceCard
                 key={service.id}
                 id={service.id}
-                icon={getServiceIcon(service.id)}
+                icon={getServiceIcon(service.icon)}
                 title={service.title}
                 description={service.summary}
                 deliverables={service.deliverables}

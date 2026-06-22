@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://flowstack.in/sitemap.xml",
+    sitemap: "https://mrfreelancer.in/sitemap.xml",
   };
 }

@@ -38,25 +38,5 @@
         "Secure local offline storage allows users to browse products and modify carts without active internet."
       ]
     }
-  },
-  {
-    "slug": "appointy-platform",
-    "title": "Appointy Platform",
-    "summary": "A multi-portal clinical scheduling application with distinct, secure control panels for Administrators, Doctors, and Patients, using role-based access control and 1 unified API backend.",
-    "description": "Built a secure patient scheduling and clinic manager. Features custom access control structures. Patients book, doctors schedule slots, and admins oversee clinic analytics.",
-    "category": "Systems Migration",
-    "status": "Internal Beta",
-    "tech": ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "JWT Auth"],
-    "featured": true,
-    "caseStudy": {
-      "overview": "Appointy is a SaaS clinic management system. It hosts three distinct user portals: patients booking appointments, doctors managing schedules and leave requests, and clinic administrators overseeing high-level performance analytics.",
-      "challenge": "Securing separate dashboard panels with different access permissions while maintaining a single, unified API codebase was a primary challenge. We also had to build a complex booking scheduler that checks doctor availability in real-time, preventing scheduling conflicts or booking slots during weekend leaves.",
-      "solution": "We designed a robust Role-Based Access Control (RBAC) middleware system to authorize endpoints. We implemented a unified scheduling engine on the backend that dynamically calculates slot availability by combining doctor weekly hours, booked appointments, and approved leaves. The frontend was built with React and Tailwind CSS.",
-      "results": [
-        "Robust RBAC prevents unauthorized access to admin and clinical data.",
-        "Zero-conflict scheduling engine eliminated double-bookings completely.",
-        "Clean, uniform API handles thousands of simultaneous request calculations."
-      ]
-    }
   }
 ]

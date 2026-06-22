@@ -24,8 +24,8 @@ export async function POST(request: Request) {
 
     if (resend) {
       const { data, error } = await resend.emails.send({
-        from: "FlowStack Contact <onboarding@resend.dev>",
-        to: ["hello@flowstack.in"],
+        from: "Mr. Freelancer Contact <onboarding@resend.dev>",
+        to: ["hello@mrfreelancer.in"],
         subject: emailSubject,
         html: emailBody,
         replyTo: email,

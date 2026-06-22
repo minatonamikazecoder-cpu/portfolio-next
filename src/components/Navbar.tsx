@@ -65,7 +65,7 @@ export default function Navbar() {
       >
         <div className="container-max w-full flex items-center justify-between">
           <Link href="/" className="font-heading text-xl text-text-main font-bold tracking-tight flex items-center gap-2">
-            FlowStack
+            Mr. Freelancer
           </Link>
 
           {/* Desktop Links */}

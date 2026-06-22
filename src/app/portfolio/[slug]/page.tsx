@@ -23,10 +23,10 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   if (!project) return {};
 
   return {
-    title: `${project.title} — Case Study | FlowStack`,
+    title: `${project.title} — Case Study | Mr. Freelancer`,
     description: project.summary,
     openGraph: {
-      title: `${project.title} — Case Study | FlowStack`,
+      title: `${project.title} — Case Study | Mr. Freelancer`,
       description: project.summary,
       type: "article",
     },

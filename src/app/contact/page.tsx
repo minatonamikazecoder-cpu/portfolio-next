@@ -4,8 +4,8 @@ import { PhoneCall, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Let's Start a Project — Contact FlowStack",
-  description: "Get in touch with FlowStack Studio for custom web development, mobile app engineering, or database refactoring inquiries.",
+  title: "Let's Start a Project — Contact Mr. Freelancer",
+  description: "Get in touch with Mr. Freelancer Studio for custom web development, mobile app engineering, or database refactoring inquiries.",
 };
 
 export default function ContactPage() {
@@ -51,10 +51,10 @@ export default function ContactPage() {
                     <div className="group transition-transform duration-200 hover:translate-x-1">
                       <span className="text-xs text-muted block">Email Address</span>
                       <a
-                        href="mailto:hello@flowstack.in"
+                        href="mailto:hello@mrfreelancer.in"
                         className="text-sm font-semibold text-text-main group-hover:text-cta transition-colors inline-block"
                       >
-                        hello@flowstack.in
+                        hello@mrfreelancer.in
                       </a>
                     </div>
                     <div className="group transition-transform duration-200 hover:translate-x-1">

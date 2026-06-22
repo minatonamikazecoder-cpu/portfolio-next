@@ -4,7 +4,7 @@ import projectsData from "@/data/projects.json";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://flowstack.in";
+  const baseUrl = "https://mrfreelancer.in";
 
   const staticRoutes = ["", "/about", "/services", "/portfolio", "/contact"].map((route) => ({
     url: `${baseUrl}${route}`,

@@ -21,20 +21,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FlowStack — We Design, Build & Scale Digital Products",
-  description: "FlowStack is a high-end digital studio helping startups and businesses design, develop, and scale custom web and mobile ecosystems.",
+  title: "Mr. Freelancer — We Design, Build & Scale Digital Products",
+  description: "Mr. Freelancer is a high-end digital studio helping startups and businesses design, develop, and scale custom web and mobile ecosystems.",
   keywords: ["Software Development", "Web Development", "Mobile Apps", "Flutter", "Next.js", "Database Migration"],
-  authors: [{ name: "FlowStack Studio" }],
+  authors: [{ name: "Mr. Freelancer Studio" }],
   openGraph: {
-    title: "FlowStack — Premium Digital Engineering",
+    title: "Mr. Freelancer — Premium Digital Engineering",
     description: "We build custom software, cross-platform apps, and scalable architectures without the agency fluff.",
     type: "website",
     locale: "en_US",
-    siteName: "FlowStack Studio",
+    siteName: "Mr. Freelancer Studio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FlowStack — We Design, Build & Scale Digital Products",
+    title: "Mr. Freelancer — We Design, Build & Scale Digital Products",
     description: "High-end digital studio for modern startups.",
   },
 };

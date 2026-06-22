@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand block */}
           <div>
-            <div className="font-heading text-2xl font-bold mb-4 tracking-tight">FlowStack</div>
+            <div className="font-heading text-2xl font-bold mb-4 tracking-tight">Mr. Freelancer</div>
             <p className="text-text-secondary text-sm max-w-xs leading-relaxed">
               Building digital products. We design, develop, and scale custom web and mobile ecosystems — from concept to launch.
             </p>
@@ -71,10 +71,10 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:hello@flowstack.in"
+                href="mailto:hello@mrfreelancer.in"
                 className="text-sm text-text-secondary hover:text-text-main transition-colors"
               >
-                hello@flowstack.in
+                hello@mrfreelancer.in
               </a>
               <a
                 href="#"
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-border-main text-center text-xs text-muted">
-          © {currentYear} FlowStack. All rights reserved.
+          © {currentYear} Mr. Freelancer. All rights reserved.
         </div>
       </div>
     </footer>

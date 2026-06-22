@@ -4,8 +4,8 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Star, MessageSquare, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Who We Are — About FlowStack",
-  description: "Learn about our team, our technical values, and our engineering philosophy at FlowStack.",
+  title: "Who We Are — About Mr. Freelancer",
+  description: "Learn about our team, our technical values, and our engineering philosophy at Mr. Freelancer.",
 };
 
 export default function AboutPage() {
@@ -85,7 +85,7 @@ export default function AboutPage() {
             <div className="space-y-6 text-text-secondary text-base leading-relaxed">
               <AnimateOnScroll delay={0.1} variant="fade-up">
                 <p>
-                  FlowStack was founded on the belief that digital products should be built with architectural integrity. Many agencies build quick, unscalable templates that break the moment you gain users. We write code with scalability and type safety in mind from day one.
+                  Mr. Freelancer was founded on the belief that digital products should be built with architectural integrity. Many agencies build quick, unscalable templates that break the moment you gain users. We write code with scalability and type safety in mind from day one.
                 </p>
               </AnimateOnScroll>
               <AnimateOnScroll delay={0.2} variant="fade-up">
