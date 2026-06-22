@@ -46,7 +46,7 @@ export default function AboutPage() {
     },
     {
       title: "Design",
-      skills: ["Figma", "UI/UX Prototyping", "Design Systems"],
+      skills: ["Figma", "UI/UX Prototyping", "Design Systems", "Adobe Illustrator", "Brand Identity"],
     },
     {
       title: "DevOps & Cloud",

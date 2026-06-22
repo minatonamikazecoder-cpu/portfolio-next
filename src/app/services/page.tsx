@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { Code2, Layers, Cpu, Database } from "lucide-react";
+import { Code2, Layers, Palette, Brush } from "lucide-react";
 import { getServiceIcon } from "@/lib/service-icons";
 import servicesData from "@/data/services.json";
 
 export const metadata: Metadata = {
   title: "Our Services & Capabilities — Mr. Freelancer",
-  description: "Explore our web development, Flutter app engineering, and systems/database migration capabilities.",
+  description: "Explore our web development, Flutter app engineering, and graphic design/brand identity capabilities.",
 };
 
 export default function ServicesPage() {
@@ -27,7 +27,7 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl leading-relaxed">
-              We build cohesive digital products — from responsive web frontends and cross-platform mobile apps to secure API layers and database migrations.
+              We build cohesive digital products — from responsive web frontends and cross-platform mobile apps to premium graphic designs and brand assets.
             </p>
           </AnimateOnScroll>
         </div>
@@ -95,12 +95,12 @@ export default function ServicesPage() {
                 icon: <Code2 className="w-8 h-8 text-emerald-600" />,
               },
               {
-                name: "PostgreSQL",
-                icon: <Database className="w-8 h-8 text-blue-800" />,
+                name: "Figma",
+                icon: <Palette className="w-8 h-8 text-rose-500" />,
               },
               {
-                name: "MongoDB",
-                icon: <Cpu className="w-8 h-8 text-green-700" />,
+                name: "Creative Cloud",
+                icon: <Brush className="w-8 h-8 text-blue-600" />,
               },
             ].map((tech) => (
               <div

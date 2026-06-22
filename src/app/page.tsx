@@ -74,7 +74,7 @@ export default function Home() {
                 Our Capabilities
               </h2>
               <p className="text-text-secondary text-base">
-                {"We specialize in engineering robust web applications, cross-platform mobile apps, and handling database migrations to support your company's scale."}
+                {"We specialize in engineering robust web applications, cross-platform mobile apps, and crafting memorable brand graphic designs to support your company's identity."}
               </p>
             </AnimateOnScroll>
           </div>

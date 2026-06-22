@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Let's Start a Project — Contact Mr. Freelancer",
-  description: "Get in touch with Mr. Freelancer Studio for custom web development, mobile app engineering, or database refactoring inquiries.",
+  description: "Get in touch with Mr. Freelancer Studio for custom web development, mobile app engineering, or graphic design inquiries.",
 };
 
 export default function ContactPage() {
@@ -81,7 +81,7 @@ export default function ContactPage() {
                     Book a Discovery Call
                   </h4>
                   <p className="text-text-secondary text-xs leading-relaxed mb-4">
-                    {"Prefer to explain your product over a video call? Book a free 15-minute scoping call, and let's discuss your database, UI, and tech requirements directly."}
+                    {"Prefer to explain your product over a video call? Book a free 15-minute scoping call, and let's discuss your design, UI, and tech requirements directly."}
                   </p>
                   <a
                     href="#"

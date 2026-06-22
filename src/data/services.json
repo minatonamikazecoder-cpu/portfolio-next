@@ -68,36 +68,36 @@
     }
   },
   {
-    "id": "systems-migration",
-    "title": "Systems & DB Migrations",
-    "summary": "Scaling existing applications by moving from NoSQL databases (like MongoDB) to robust Relational databases (like PostgreSQL) for reliability.",
-    "description": "Upgrading legacy codebases and migrating database architectures. We move data safely from NoSQL (MongoDB) to relational SQL (PostgreSQL) schemas to prevent integrity issues.",
+    "id": "graphic-design",
+    "title": "Graphic Design",
+    "summary": "Stunning visual identities, brand guidelines, marketing assets, and user interface designs that stand out.",
+    "description": "We create cohesive visual identities, logos, marketing materials, and high-fidelity UI/UX design assets that align perfectly with your brand strategy.",
     "deliverables": [
-      "NoSQL to Relational SQL migrations",
-      "Data schema normalization & constraints",
-      "API backend performance tuning",
-      "Zero-downtime deployment pipelines"
+      "Brand guidelines & typography libraries",
+      "Custom logo & vector iconography creation",
+      "Marketing assets & social media templates",
+      "High-fidelity UI/UX component designs"
     ],
-    "icon": "database",
-    "techStack": ["PostgreSQL", "MongoDB", "Prisma ORM", "SQL", "Redis", "Docker"],
+    "icon": "palette",
+    "techStack": ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Design Systems", "Typography", "Color Theory"],
     "detail": {
-      "heroDescription": "We restructure existing database layers and scale legacy systems to handle peak user loads. If your application is suffering from data integrity anomalies in MongoDB, we normalize your entities and safely migrate them to PostgreSQL under strict relational constraints.",
-      "approach": "Database migrations require meticulous planning to avoid data loss or server downtime. We build custom ETL (Extract, Transform, Load) pipelines to validate data consistency, test migration runs on staging copies, and execute production cuts during off-peak windows.",
+      "heroDescription": "We design memorable visual identities and marketing assets that define your brand. By utilizing Figma and Adobe Creative Suite, we build design systems, clean vectors, and engaging media assets that tell your product's story.",
+      "approach": "Our design philosophy centers around clarity, emotion, and functional aesthetics. We conduct brand research, experiment with harmonious palettes, and refine visual layouts to guarantee your brand looks premium across print and digital.",
       "whyUs": [
-        "Proven experience migrating large production datasets with zero data loss.",
-        "Expertise in SQL query tuning, indexing, and connection pool management.",
-        "Rigorous staging-based schema testing to predict migration behavior.",
-        "Strong understanding of legacy systems and API refactoring patterns."
+        "Tailored design systems that ensure perfect visual brand alignment.",
+        "High-fidelity mockups and print-ready vector source files.",
+        "Focus on modern, clean, and distraction-free visual communication.",
+        "Fast iterations and collaborative Figma design workshops."
       ],
       "process": [
-        { "step": "1", "title": "Schema Auditing", "desc": "We analyze your existing database, map out relationships, note validation gaps, and construct the target SQL schema." },
-        { "step": "2", "title": "ETL Scripting", "desc": "We write data transformation scripts, map custom MongoDB documents to relational tables, and enforce integrity rules." },
-        { "step": "3", "title": "Staging Dry Run", "desc": "We clone your production database to an isolated environment, run the migration scripts, and audit data correctness." },
-        { "step": "4", "title": "Zero-Downtime Cutover", "desc": "We implement a dual-write system or perform an off-peak maintenance cut, update server environments, and verify live APIs." }
+        { "step": "1", "title": "Brand Discovery", "desc": "We dive deep into your brand values, target audience, color preferences, and competitors to map out a clear visual direction." },
+        { "step": "2", "title": "Moodboarding & Direction", "desc": "We create color palettes, typography pairings, and style moodboards to align on the creative vision before detailed design work." },
+        { "step": "3", "title": "Asset & Logo Creation", "desc": "We craft your visual assets, logos, and custom vectors in high fidelity, ensuring they remain clear at any size." },
+        { "step": "4", "title": "System Handoff", "desc": "We package clean, structured design libraries, export formats (SVG, PDF, PNG), and document guidelines for your team." }
       ],
       "faq": [
-        { "question": "Why migrate from NoSQL (MongoDB) to Relational SQL (PostgreSQL)?", "answer": "As applications grow, maintaining complex relationships, data constraints, and transactional consistency (ACID properties) in NoSQL can lead to bugs and data fragmentation. Relational databases like PostgreSQL enforce strict schema validations, foreign key constraints, and perform complex joins significantly faster." },
-        { "question": "Will my app be down during the migration?", "answer": "We design migrations to minimize or eliminate downtime. Depending on the size of the database, we can use dual-writing strategies (writing to both databases during cutover) or perform rapid migrations during scheduled low-traffic hours." }
+        { "question": "Do you provide the raw design source files?", "answer": "Yes, absolutely. We hand over 100% ownership of all source files, including organized Figma files, Adobe Illustrator vectors (.ai), and Photoshop documents (.psd)." },
+        { "question": "Can you help redesign an existing logo/brand?", "answer": "Yes, we specialize in brand refreshes. We can take your existing logo and assets and modernize them while preserving the core elements your audience already recognizes." }
       ]
     }
   }

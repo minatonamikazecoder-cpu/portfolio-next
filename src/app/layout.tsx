@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Mr. Freelancer — We Design, Build & Scale Digital Products",
   description: "Mr. Freelancer is a high-end digital studio helping startups and businesses design, develop, and scale custom web and mobile ecosystems.",
-  keywords: ["Software Development", "Web Development", "Mobile Apps", "Flutter", "Next.js", "Database Migration"],
+  keywords: ["Software Development", "Web Development", "Mobile Apps", "Flutter", "Next.js", "Graphic Design", "Brand Identity"],
   authors: [{ name: "Mr. Freelancer Studio" }],
   openGraph: {
     title: "Mr. Freelancer — Premium Digital Engineering",

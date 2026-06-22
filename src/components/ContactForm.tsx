@@ -138,7 +138,7 @@ export default function ContactForm() {
             >
               <option value="web">Web Development (React/Next.js/TypeScript)</option>
               <option value="app">Mobile App Development (Flutter)</option>
-              <option value="migration">Database Migration (MERN to PERN)</option>
+              <option value="design">Graphic Design & Brand Identity</option>
               <option value="other">Other / Custom Ecosystem</option>
             </select>
           </div>

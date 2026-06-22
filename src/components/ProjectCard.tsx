@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, Smartphone, Database, Code } from "lucide-react";
+import { Monitor, Smartphone, Database, Code, Palette } from "lucide-react";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -30,6 +30,9 @@ export default function ProjectCard({
     const className = "w-4 h-4 text-cta";
     if (cat.toLowerCase().includes("web")) return <Monitor className={className} />;
     if (cat.toLowerCase().includes("app")) return <Smartphone className={className} />;
+    if (cat.toLowerCase().includes("design") || cat.toLowerCase().includes("graphic") || cat.toLowerCase().includes("brand")) {
+      return <Palette className={className} />;
+    }
     if (cat.toLowerCase().includes("system") || cat.toLowerCase().includes("db") || cat.toLowerCase().includes("migration")) {
       return <Database className={className} />;
     }

@@ -23,8 +23,8 @@ const steps: ProcessStep[] = [
   },
   {
     num: "3",
-    title: "Development & DB Migration",
-    desc: "We build the system using TypeScript, Next.js, and Flutter. If we are upgrading an existing app, we execute safe database migrations and refactor APIs without downtime.",
+    title: "Development & Asset Creation",
+    desc: "We build the system using TypeScript, Next.js, and Flutter. Concurrently, we create custom brand assets, iconography, and graphic layouts to ensure a visually cohesive project launch.",
   },
   {
     num: "4",
