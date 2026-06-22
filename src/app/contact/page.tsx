@@ -51,10 +51,10 @@ export default function ContactPage() {
                     <div className="group transition-transform duration-200 hover:translate-x-1">
                       <span className="text-xs text-muted block">Email Address</span>
                       <a
-                        href="mailto:hello@mrfreelancer.in"
+                        href="mailto:info@mrfreelancer.in"
                         className="text-sm font-semibold text-text-main group-hover:text-cta transition-colors inline-block"
                       >
-                        hello@mrfreelancer.in
+                        info@mrfreelancer.in
                       </a>
                     </div>
                     <div className="group transition-transform duration-200 hover:translate-x-1">
