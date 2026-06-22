@@ -1,5 +1,5 @@
 import React from "react";
-import { Monitor, Smartphone, Database, Palette } from "lucide-react";
+import { Monitor, Smartphone, Database, Palette, Layout } from "lucide-react";
 
 export function getServiceIcon(iconName: string): React.ReactNode {
   switch (iconName) {
@@ -11,6 +11,8 @@ export function getServiceIcon(iconName: string): React.ReactNode {
       return <Database className="w-6 h-6" />;
     case "palette":
       return <Palette className="w-6 h-6" />;
+    case "layout":
+      return <Layout className="w-6 h-6" />;
     default:
       return <Monitor className="w-6 h-6" />;
   }

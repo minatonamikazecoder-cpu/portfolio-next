@@ -70,16 +70,16 @@
   {
     "id": "graphic-design",
     "title": "Graphic Design",
-    "summary": "Stunning visual identities, brand guidelines, marketing assets, and user interface designs that stand out.",
-    "description": "We create cohesive visual identities, logos, marketing materials, and high-fidelity UI/UX design assets that align perfectly with your brand strategy.",
+    "summary": "Cohesive brand identities, custom logos, social media posts, and marketing materials that capture attention.",
+    "description": "We create memorable brand guidelines, custom logo assets, engaging social media posts, and professional marketing graphics that define your company's visual language.",
     "deliverables": [
+      "Custom logo & brand identity creation",
+      "Social media post templates & graphics",
       "Brand guidelines & typography libraries",
-      "Custom logo & vector iconography creation",
-      "Marketing assets & social media templates",
-      "High-fidelity UI/UX component designs"
+      "Print-ready vectors & marketing assets"
     ],
     "icon": "palette",
-    "techStack": ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Design Systems", "Typography", "Color Theory"],
+    "techStack": ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Brand Design", "Social Media Graphics", "Vector Art"],
     "detail": {
       "heroDescription": "We design memorable visual identities and marketing assets that define your brand. By utilizing Figma and Adobe Creative Suite, we build design systems, clean vectors, and engaging media assets that tell your product's story.",
       "approach": "Our design philosophy centers around clarity, emotion, and functional aesthetics. We conduct brand research, experiment with harmonious palettes, and refine visual layouts to guarantee your brand looks premium across print and digital.",
@@ -87,17 +87,51 @@
         "Tailored design systems that ensure perfect visual brand alignment.",
         "High-fidelity mockups and print-ready vector source files.",
         "Focus on modern, clean, and distraction-free visual communication.",
-        "Fast iterations and collaborative Figma design workshops."
+        "Fast iterations and collaborative design workshops."
       ],
       "process": [
         { "step": "1", "title": "Brand Discovery", "desc": "We dive deep into your brand values, target audience, color preferences, and competitors to map out a clear visual direction." },
         { "step": "2", "title": "Moodboarding & Direction", "desc": "We create color palettes, typography pairings, and style moodboards to align on the creative vision before detailed design work." },
-        { "step": "3", "title": "Asset & Logo Creation", "desc": "We craft your visual assets, logos, and custom vectors in high fidelity, ensuring they remain clear at any size." },
+        { "step": "3", "title": "Logo & Graphic Design", "desc": "We craft your visual assets, logos, and custom vectors in high fidelity, ensuring they remain clear at any size." },
         { "step": "4", "title": "System Handoff", "desc": "We package clean, structured design libraries, export formats (SVG, PDF, PNG), and document guidelines for your team." }
       ],
       "faq": [
         { "question": "Do you provide the raw design source files?", "answer": "Yes, absolutely. We hand over 100% ownership of all source files, including organized Figma files, Adobe Illustrator vectors (.ai), and Photoshop documents (.psd)." },
         { "question": "Can you help redesign an existing logo/brand?", "answer": "Yes, we specialize in brand refreshes. We can take your existing logo and assets and modernize them while preserving the core elements your audience already recognizes." }
+      ]
+    }
+  },
+  {
+    "id": "ui-ux-design",
+    "title": "UI/UX Design",
+    "summary": "User-centered interfaces, wireframes, high-fidelity prototypes, and design systems for web and mobile platforms.",
+    "description": "We design intuitive user journeys, interactive Figma prototypes, responsive user interfaces, and structured design systems that bridge the gap between design and development.",
+    "deliverables": [
+      "User research & low-fidelity wireframing",
+      "Interactive high-fidelity prototypes (Figma)",
+      "Cross-platform responsive UI designs",
+      "Component-based design systems for developers"
+    ],
+    "icon": "layout",
+    "techStack": ["Figma", "UI Prototyping", "Wireframing", "User Journeys", "Design Systems", "Usability Testing"],
+    "detail": {
+      "heroDescription": "We design intuitive user journeys and interactive prototypes that make digital products clear and engaging. By leveraging modern UI/UX methodologies and reusable design components, we ensure seamless developer handoff and delightful customer experiences.",
+      "approach": "We follow a user-centric design process, starting with research and wireframes before moving to high-fidelity visuals. We build design tokens and component libraries in Figma, mirroring frontend React/Flutter structure to ensure perfect design-to-code parity.",
+      "whyUs": [
+        "Component-driven Figma files structured exactly like modern React/Flutter code.",
+        "Interactive prototypes to test user flows and click paths before coding.",
+        "Focus on web accessibility standards (WCAG) and responsive grid systems.",
+        "Collaborative, iterative design loops with prompt client feedback sessions."
+      ],
+      "process": [
+        { "step": "1", "title": "User Flow & Wireframes", "desc": "We map out user paths, structure information architecture, and create low-fidelity wireframes to focus on UX functionality." },
+        { "step": "2", "title": "High-Fidelity Design", "desc": "We translate approved wireframes into beautiful, modern user interfaces using your brand guidelines and premium visuals." },
+        { "step": "3", "title": "Interactive Prototyping", "desc": "We connect screens in Figma to build clickable interactive flows, testing transition speeds and interaction ergonomics." },
+        { "step": "4", "title": "Developer Handoff", "desc": "We organize design specs, set up spacing tokens, document hover/active states, and host a walk-through session for the build." }
+      ],
+      "faq": [
+        { "question": "What tools do you use for UI/UX design?", "answer": "Figma is our primary design and prototyping tool. It allows for real-time collaboration, component state variants, and seamless developer specs extraction." },
+        { "question": "Do you perform user testing during design?", "answer": "Yes. We create clickable Figma prototypes that can be shared with actual users or your internal team to run usability tests and gather actionable feedback before development starts." }
       ]
     }
   }
