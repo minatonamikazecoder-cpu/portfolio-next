@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="py-20 border-b border-border-main bg-bg-alt">
         <div className="container-max">
           <div className="max-w-4xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-cta block mb-3">
               {project.category}
             </span>
             <h1 className="font-heading text-4xl md:text-6xl text-text-main font-bold tracking-tight mb-8">
@@ -75,8 +75,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-muted mb-2">
                   Status
                 </span>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border-main text-xs font-semibold text-text-secondary">
-                  <span className="w-1.5 h-1.5 rounded-full bg-text-main" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-soft/40 border border-cta/10 text-xs font-semibold text-cta">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cta animate-pulse" />
                   {project.status}
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-xs font-semibold px-2.5 py-1 rounded bg-surface border border-border-main text-text-secondary"
+                      className="text-xs font-semibold px-2.5 py-1 rounded bg-surface border border-border-main text-text-secondary hover:border-cta/20 hover:text-cta transition-colors duration-200"
                     >
                       {t}
                     </span>
@@ -110,7 +110,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               {/* Detailed Breakdown */}
               <div className="lg:col-span-8 space-y-16">
                 <div>
-                  <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-muted mb-4">
+                  <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-cta mb-4">
                     Overview
                   </h3>
                   <p className="text-text-secondary text-base md:text-lg leading-relaxed">
@@ -121,7 +121,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 border-t border-border-main/60">
                   <div>
                     <div className="flex items-center gap-2 text-text-main mb-4">
-                      <ShieldAlert className="w-5 h-5 text-muted" />
+                      <ShieldAlert className="w-5 h-5 text-cta" />
                       <h4 className="font-heading text-sm font-bold uppercase tracking-wide">
                         The Challenge
                       </h4>
@@ -133,7 +133,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                   <div>
                     <div className="flex items-center gap-2 text-text-main mb-4">
-                      <Cpu className="w-5 h-5 text-text-main" />
+                      <Cpu className="w-5 h-5 text-cta" />
                       <h4 className="font-heading text-sm font-bold uppercase tracking-wide">
                         Our Solution
                       </h4>
@@ -149,7 +149,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <div className="lg:col-span-4 lg:pl-8">
                 <div className="bg-bg-alt border border-border-main rounded-xl p-8 sticky top-24">
                   <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border-main/65">
-                    <Award className="w-5 h-5 text-text-main" />
+                    <Award className="w-5 h-5 text-cta" />
                     <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-text-main">
                       Key Outcomes
                     </h3>
@@ -158,7 +158,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <ul className="space-y-6">
                     {caseStudy.results.map((result, idx) => (
                       <li key={idx} className="flex gap-3 items-start">
-                        <CheckCircle2 className="w-4 h-4 text-text-main mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-cta mt-0.5 flex-shrink-0" />
                         <span className="text-xs text-text-secondary leading-normal">
                           {result}
                         </span>

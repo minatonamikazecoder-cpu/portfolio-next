@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import StaggerGrid from "@/components/StaggerGrid";
 import { Code2, Layers, Palette, Brush } from "lucide-react";
 import { getServiceIcon } from "@/lib/service-icons";
 import servicesData from "@/data/services.json";
@@ -20,7 +21,7 @@ export default function ServicesPage() {
       <section className="bg-bg-alt py-20 border-b border-border-main">
         <div className="container-max">
           <AnimateOnScroll variant="fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-3">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-cta mb-3">
               What We Do
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
@@ -36,7 +37,11 @@ export default function ServicesPage() {
       {/* Services Grid Section */}
       <section className="py-20 bg-surface">
         <div className="container-max">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerGrid
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            staggerDelay={0.08}
+            variant="scale-up"
+          >
             {servicesData.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -47,7 +52,7 @@ export default function ServicesPage() {
                 deliverables={service.deliverables}
               />
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 
@@ -56,7 +61,7 @@ export default function ServicesPage() {
         <div className="container-max">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <AnimateOnScroll variant="fade-up">
-              <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-cta block mb-3">
                 Our Stack
               </span>
               <h2 className="font-heading text-3xl text-text-main font-bold uppercase mb-4">
@@ -68,7 +73,11 @@ export default function ServicesPage() {
             </AnimateOnScroll>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center">
+          <StaggerGrid
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center"
+            staggerDelay={0.05}
+            variant="fade-up"
+          >
             {[
               {
                 name: "TypeScript",
@@ -105,7 +114,7 @@ export default function ServicesPage() {
             ].map((tech) => (
               <div
                 key={tech.name}
-                className="bg-surface border border-border-main rounded-xl p-6 hover:border-cta hover:shadow-sm transition-all duration-300 flex flex-col items-center justify-center gap-4"
+                className="bg-surface border border-border-main rounded-xl p-6 hover:border-cta/30 hover:shadow-md hover:shadow-cta/5 transition-all duration-300 flex flex-col items-center justify-center gap-4 cursor-default"
               >
                 <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-bg-alt border border-border-main">
                   {tech.icon}
@@ -115,7 +124,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 

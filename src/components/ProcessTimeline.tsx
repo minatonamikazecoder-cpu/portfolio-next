@@ -50,7 +50,7 @@ export default function ProcessTimeline() {
       
       {/* Animated active line (drawn on scroll) */}
       <motion.div 
-        className="absolute top-2 left-5 w-[2px] bg-text-main z-0 origin-top"
+        className="absolute top-2 left-5 w-[2px] bg-cta z-0 origin-top"
         style={{ height: lineHeight }}
       />
 
@@ -59,7 +59,7 @@ export default function ProcessTimeline() {
           <AnimateOnScroll key={step.num} delay={0.1} variant="fade-left">
             <div className="flex gap-6 items-start relative z-10 group">
               <motion.div 
-                className="w-10 h-10 rounded-full bg-surface border-2 border-border-main text-text-main font-semibold flex items-center justify-center flex-shrink-0 z-10 transition-colors duration-300 group-hover:border-text-main group-hover:bg-text-main group-hover:text-white"
+                className="w-10 h-10 rounded-full bg-surface border-2 border-border-main text-text-main font-semibold flex items-center justify-center flex-shrink-0 z-10 transition-colors duration-300 group-hover:border-cta group-hover:bg-cta group-hover:text-white"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >

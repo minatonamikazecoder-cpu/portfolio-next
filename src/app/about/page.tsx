@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import StaggerGrid from "@/components/StaggerGrid";
 import { Star, MessageSquare, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -60,7 +61,7 @@ export default function AboutPage() {
       <section className="bg-bg-alt py-20 border-b border-border-main">
         <div className="container-max">
           <AnimateOnScroll variant="fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-3">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-cta mb-3">
               About Us
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
@@ -103,7 +104,7 @@ export default function AboutPage() {
         <div className="container-max">
           <div className="max-w-2xl mb-16">
             <AnimateOnScroll variant="fade-up">
-              <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-cta block mb-3">
                 Our Values
               </span>
               <h2 className="font-heading text-3xl text-text-main font-bold tracking-tight">
@@ -112,14 +113,18 @@ export default function AboutPage() {
             </AnimateOnScroll>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerGrid
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            staggerDelay={0.08}
+            variant="scale-up"
+          >
             {values.map((v) => (
               <div
                 key={v.title}
-                className="bg-surface border border-border-main rounded-xl p-8 shadow-sm h-full flex flex-col hover:border-cta transition-colors duration-300 relative overflow-hidden group"
+                className="bg-surface border border-border-main rounded-xl p-8 shadow-sm h-full flex flex-col hover:border-cta/30 transition-colors duration-300 relative overflow-hidden group"
               >
-                <div className="absolute top-0 left-0 w-1 h-0 bg-cta group-hover:h-full transition-all duration-300 ease-out" />
-                <div className="w-12 h-12 rounded-lg bg-bg-alt flex items-center justify-center mb-6 border border-border-main group-hover:border-cta transition-colors duration-300">
+                <div className="absolute top-0 left-0 w-1 h-0 bg-cta-gradient group-hover:h-full transition-all duration-500 ease-out rounded-r" />
+                <div className="w-12 h-12 rounded-lg bg-bg-alt flex items-center justify-center mb-6 border border-border-main group-hover:border-cta/30 group-hover:scale-110 transition-all duration-300">
                   {v.icon}
                 </div>
                  <h4 className="font-heading text-lg font-bold text-text-main mb-3 tracking-tight">
@@ -128,7 +133,7 @@ export default function AboutPage() {
                 <p className="text-text-secondary text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 
@@ -137,7 +142,7 @@ export default function AboutPage() {
         <div className="container-max">
           <div className="max-w-2xl mb-16">
             <AnimateOnScroll variant="fade-up">
-              <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-cta block mb-3">
                 Capabilities
               </span>
               <h2 className="font-heading text-3xl text-text-main font-bold tracking-tight">
@@ -146,7 +151,11 @@ export default function AboutPage() {
             </AnimateOnScroll>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerGrid
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.05}
+            variant="fade-up"
+          >
             {skillCategories.map((cat) => (
               <div key={cat.title} className="border border-border-main rounded-xl p-8 bg-bg-alt/30">
                 <h4 className="font-heading text-base font-bold text-text-main mb-4 pb-2 border-b border-border-main tracking-tight">
@@ -156,7 +165,7 @@ export default function AboutPage() {
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-xs font-semibold px-3 py-1 rounded bg-surface border border-border-main text-text-secondary hover:border-cta hover:text-cta transition-colors duration-200 cursor-default"
+                      className="text-xs font-semibold px-3 py-1 rounded bg-accent-soft/40 border border-cta/10 text-cta hover:border-cta/40 hover:bg-cta hover:text-white transition-all duration-200 cursor-default"
                     >
                       {skill}
                     </span>
@@ -164,7 +173,7 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 

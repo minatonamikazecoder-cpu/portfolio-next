@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Archivo, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import ScrollProgress from "@/components/ScrollProgress";
+import ScrollToTop from "@/components/ScrollToTop";
 
-const inter = Inter({
+const archivo = Archivo({
   variable: "--font-sans",
   subsets: ["latin"],
 });
@@ -47,14 +49,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${archivo.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-text-main font-sans">
+        <ScrollProgress />
         <Navbar />
         <main className="flex-grow pt-18">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

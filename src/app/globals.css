@@ -1,24 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #FAFAFA;
+  /* ── Core Palette: Slate + Electric Blue ── */
+  --color-bg: #FAFAFA;
+  --color-bg-alt: #F1F5F9;
   --color-surface: #FFFFFF;
-  --color-border-main: #EAEAEA;
-  --color-text-main: #000000;
-  --color-text-secondary: #666666;
-  --color-muted: #737373;
-  --color-cta: #000000;
-  --color-cta-hover: #1F2937;
-  
+  --color-border-main: #E2E8F0;
+  --color-text-main: #0F172A;
+  --color-text-secondary: #475569;
+  --color-muted: #64748B;
+  --color-cta: #2563EB;
+  --color-cta-hover: #1D4ED8;
+  --color-accent: #06B6D4;
+  --color-accent-soft: #DBEAFE;
+
+  /* ── Fonts ── */
   --font-heading: var(--font-heading);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
 }
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #000000;
+  --background: #FAFAFA;
+  --foreground: #0F172A;
 }
 
 body {
@@ -28,12 +32,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom transitions and scroll behaviors */
+/* ── Scroll ── */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom styling utilities */
+/* ── Layout ── */
 .container-max {
   max-width: 1200px;
   margin-left: auto;
@@ -42,18 +46,57 @@ html {
   padding-right: 1.5rem;
 }
 
+/* ── Fluid Hero Typography ── */
+.hero-heading {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+/* ── Background Patterns ── */
 .bg-grid-pattern {
   background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(9, 9, 11, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(9, 9, 11, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
   background-size: 20px 20px;
-  background-image: radial-gradient(circle, rgba(9, 9, 11, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
 }
 
-/* Accessibility */
+/* ── Gradient Utilities ── */
+.bg-cta-gradient {
+  background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+}
+
+.bg-section-gradient {
+  background: linear-gradient(180deg, #F1F5F9 0%, #FAFAFA 100%);
+}
+
+.bg-hero-radial {
+  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+}
+
+/* ── Focus Accessibility ── */
+*:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Scroll Progress Bar ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563EB, #06B6D4);
+  z-index: 9999;
+  transform-origin: left;
+}
+
+/* ── Accessibility ── */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-delay: 0s !important;

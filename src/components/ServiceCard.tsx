@@ -22,16 +22,16 @@ export default function ServiceCard({
   return (
     <Link href={`/services/${id}`} className="block h-full">
       <motion.div
-        className="bg-surface border border-border-main/60 rounded-xl p-8 flex flex-col h-full group cursor-pointer relative overflow-hidden transition-all duration-300 hover:border-cta/20 shadow-[0_8px_30px_rgb(0,0,0,0.015)]"
+        className="bg-surface border border-border-main/60 rounded-xl p-8 flex flex-col h-full group cursor-pointer relative overflow-hidden transition-all duration-300 hover:border-cta/25 shadow-[0_8px_30px_rgb(0,0,0,0.015)]"
         whileHover={{
-          y: -4,
-          boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.06)",
+          y: -6,
+          boxShadow: "0 25px 50px -15px rgba(37, 99, 235, 0.08), 0 10px 20px -10px rgba(0,0,0,0.04)",
           transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
         }}
       >
-        <div className="absolute top-0 left-0 w-1.5 h-0 bg-cta group-hover:h-full transition-all duration-300 ease-out" />
+        <div className="absolute top-0 left-0 w-1.5 h-0 bg-cta-gradient group-hover:h-full transition-all duration-500 ease-out rounded-r" />
         
-        <div className="w-12 h-12 border border-border-main/80 bg-bg-alt rounded-xl flex items-center justify-center text-cta mb-6 group-hover:bg-cta/5 group-hover:border-cta/35 transition-all duration-300">
+        <div className="w-12 h-12 border border-border-main/80 bg-bg-alt rounded-xl flex items-center justify-center text-cta mb-6 group-hover:bg-cta/8 group-hover:border-cta/35 group-hover:scale-110 transition-all duration-300">
           {icon}
         </div>
 

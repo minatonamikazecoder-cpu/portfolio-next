@@ -15,7 +15,7 @@ export default function ContactPage() {
       <section className="bg-bg-alt py-20 border-b border-border-main">
         <div className="container-max">
           <AnimateOnScroll variant="fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-3">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-cta mb-3">
               Contact
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
@@ -49,7 +49,7 @@ export default function ContactPage() {
                   </h4>
                   <div className="space-y-4">
                     <div className="group transition-transform duration-200 hover:translate-x-1">
-                      <span className="text-xs text-muted block">Email Address</span>
+                      <span className="text-xs text-cta block">Email Address</span>
                       <a
                         href="mailto:info@mrfreelancer.in"
                         className="text-sm font-semibold text-text-main group-hover:text-cta transition-colors inline-block"
@@ -58,7 +58,7 @@ export default function ContactPage() {
                       </a>
                     </div>
                     <div className="group transition-transform duration-200 hover:translate-x-1">
-                      <span className="text-xs text-muted block">Direct Chat</span>
+                      <span className="text-xs text-cta block">Direct Chat</span>
                       <a
                         href="#"
                         className="text-sm font-semibold text-text-main group-hover:text-cta transition-colors inline-block"
@@ -72,9 +72,9 @@ export default function ContactPage() {
 
               {/* Discovery Call card */}
               <AnimateOnScroll variant="fade-up" delay={0.2}>
-                <div className="bg-bg-alt border border-border-main p-6 rounded-xl group hover:border-cta transition-colors duration-300 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-0 bg-cta group-hover:h-full transition-all duration-300 ease-out" />
-                  <div className="w-10 h-10 rounded-lg bg-surface border border-border-main flex items-center justify-center text-cta mb-4 group-hover:border-cta transition-colors duration-300">
+                <div className="bg-bg-alt border border-border-main p-6 rounded-xl group hover:border-cta/30 transition-colors duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-1 h-0 bg-cta-gradient group-hover:h-full transition-all duration-500 ease-out rounded-r" />
+                  <div className="w-10 h-10 rounded-lg bg-surface border border-border-main flex items-center justify-center text-cta mb-4 group-hover:border-cta/30 group-hover:scale-110 transition-all duration-300">
                     <PhoneCall className="w-5 h-5" />
                   </div>
                   <h4 className="text-base font-bold text-text-main mb-2 tracking-tight">

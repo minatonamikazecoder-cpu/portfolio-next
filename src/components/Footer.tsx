@@ -13,7 +13,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-bg text-text-main py-16 mt-auto border-t border-border-main">
+    <footer className="bg-bg text-text-main py-16 mt-auto border-t border-border-main relative">
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-cta-gradient opacity-30" />
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand block */}
@@ -29,7 +30,7 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-9 h-9 rounded-md border border-border-main flex items-center justify-center text-muted hover:text-text-main hover:border-text-secondary transition-colors"
+                    className="w-9 h-9 rounded-lg border border-border-main flex items-center justify-center text-muted hover:text-white hover:bg-cta hover:border-cta hover:scale-110 transition-all duration-200"
                     aria-label={social.name}
                   >
                     <Icon size={16} />

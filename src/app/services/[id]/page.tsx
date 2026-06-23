@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="w-12 h-12 border border-border-main bg-surface rounded-xl flex items-center justify-center text-cta shadow-sm">
                 {getServiceIcon(service.icon)}
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-muted">
+              <span className="text-xs font-bold uppercase tracking-widest text-cta">
                 Our Capabilities
               </span>
             </div>
@@ -82,7 +82,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             {/* Tech Stack Badges */}
             <div className="pt-6 border-t border-border-main/60">
-              <span className="block text-[10px] font-bold uppercase tracking-wider text-muted mb-3">
+              <span className="block text-[10px] font-bold uppercase tracking-wider text-cta mb-3">
                 Core Technologies
               </span>
               <div className="flex flex-wrap gap-2">
@@ -108,7 +108,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {/* Left: Approach & Why Us */}
             <div className="lg:col-span-7 space-y-12">
               <div>
-                <h2 className="font-heading text-xs font-bold uppercase tracking-widest text-muted mb-4">
+                <h2 className="font-heading text-xs font-bold uppercase tracking-widest text-cta mb-4">
                   Our Approach
                 </h2>
                 <p className="text-text-secondary text-base md:text-lg leading-relaxed">
@@ -146,7 +146,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
                   {detail.process.map((p) => (
                     <div key={p.step} className="flex gap-4 items-start relative z-10">
-                      <div className="w-9 h-9 rounded-full bg-surface border border-border-main text-text-main font-semibold flex items-center justify-center flex-shrink-0 text-sm shadow-sm">
+                      <div className="w-9 h-9 rounded-full bg-accent-soft/40 border border-cta/20 text-cta font-semibold flex items-center justify-center flex-shrink-0 text-sm shadow-sm">
                         {p.step}
                       </div>
                       <div className="pt-1">
@@ -173,7 +173,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <div className="container-max">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-16">
-                <span className="text-xs font-bold uppercase tracking-widest text-muted block mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-cta block mb-3">
                   Questions & Answers
                 </span>
                 <h2 className="font-heading text-3xl text-text-main font-bold uppercase">
@@ -185,7 +185,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 {detail.faq.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-surface border border-border-main rounded-xl p-6 md:p-8"
+                    className="bg-surface border border-border-main rounded-xl p-6 md:p-8 hover:border-cta/20 transition-colors duration-300"
                   >
                     <h3 className="text-sm font-bold text-text-main mb-3 flex items-start gap-3">
                       <span className="text-cta font-mono text-xs mt-0.5">Q.</span>

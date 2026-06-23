@@ -57,10 +57,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-18 flex items-center transition-all duration-300 ${
+        className={`fixed z-50 h-18 flex items-center transition-all duration-500 ${
           isScrolled
-            ? "bg-bg/92 backdrop-blur-md shadow-sm border-b border-border-main"
-            : "bg-transparent"
+            ? "top-3 left-4 right-4 bg-surface/92 backdrop-blur-xl shadow-lg shadow-black/[0.04] border border-border-main rounded-2xl"
+            : "top-0 left-0 right-0 bg-transparent"
         }`}
       >
         <div className="container-max w-full flex items-center justify-between">
@@ -76,7 +76,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs font-semibold tracking-wider uppercase transition-colors relative py-1 hover:text-text-main ${
+                  className={`text-xs font-semibold tracking-wider uppercase transition-colors relative py-1 hover:text-cta ${
                     isActive ? "text-text-main" : "text-muted"
                   }`}
                 >
@@ -84,7 +84,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="navbar-active-indicator"
-                      className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-cta"
+                      className="absolute bottom-[-4px] left-0 w-full h-[2px] bg-cta rounded-full"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -96,7 +96,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-5 py-2 rounded-md text-xs font-semibold tracking-wide bg-cta text-white hover:bg-cta-hover transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-lg text-xs font-semibold tracking-wide bg-cta text-white hover:bg-cta-hover hover:shadow-md hover:shadow-cta/15 transition-all duration-200"
             >
               Get a Quote
             </Link>

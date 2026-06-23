@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "quote": "Mr. Freelancer completely overhauled our mobile application, reducing user drop-off by 45%. Their engineering-first mindset saved us months of development.",
+    "author": "Sarah Jenkins",
+    "role": "CTO",
+    "company": "Veloce SaaS",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "quote": "Outstanding design and speed. They didn't just build our marketing site; they created a scalable design system that our internal team now uses daily.",
+    "author": "Marcus Chen",
+    "role": "Founder",
+    "company": "Equinox AI",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "quote": "Professional, transparent, and incredibly fast. The process timeline was followed to the letter, and the resulting web app exceeds all our performance benchmarks.",
+    "author": "Elena Rostova",
+    "role": "VP of Product",
+    "company": "Aether FinTech",
+    "rating": 5
+  }
+]

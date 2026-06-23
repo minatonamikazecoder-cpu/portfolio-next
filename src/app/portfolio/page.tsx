@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import CtaBanner from "@/components/CtaBanner";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import StaggerGrid from "@/components/StaggerGrid";
 import { FolderOpen } from "lucide-react";
 import projectsData from "@/data/projects.json";
 
@@ -11,7 +12,7 @@ export default function PortfolioPage() {
       <section className="bg-bg-alt py-20 border-b border-border-main">
         <div className="container-max">
           <AnimateOnScroll variant="fade-up">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-muted mb-3">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-cta mb-3">
               Portfolio
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold tracking-tight mb-4">
@@ -28,7 +29,11 @@ export default function PortfolioPage() {
       <section className="py-20 bg-surface">
         <div className="container-max">
           {projectsData.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <StaggerGrid
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              staggerDelay={0.1}
+              variant="blur-in"
+            >
               {projectsData.map((project) => (
                 <ProjectCard
                   key={project.title}
@@ -40,7 +45,7 @@ export default function PortfolioPage() {
                   tech={project.tech}
                 />
               ))}
-            </div>
+            </StaggerGrid>
           ) : (
             <div className="text-center py-20 bg-bg-alt border border-dashed border-border-main rounded-xl">
               <FolderOpen className="w-10 h-10 text-muted mx-auto mb-3" />

@@ -42,10 +42,10 @@ export default function ProjectCard({
   return (
     <Link href={`/portfolio/${slug}`} className="block h-full">
       <motion.div
-        className="bg-surface border border-border-main rounded-xl overflow-hidden flex flex-col h-full group shadow-sm transition-all duration-300 hover:border-cta/35 cursor-pointer"
+        className="bg-surface border border-border-main rounded-xl overflow-hidden flex flex-col h-full group shadow-sm transition-all duration-300 hover:border-cta/30 cursor-pointer"
         whileHover={{
-          y: -4,
-          boxShadow: "0 20px 40px -15px rgba(0,0,0,0.06)",
+          y: -6,
+          boxShadow: "0 25px 50px -15px rgba(37, 99, 235, 0.08), 0 10px 20px -10px rgba(0,0,0,0.04)",
           transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
         }}
       >
@@ -63,7 +63,7 @@ export default function ProjectCard({
         </div>
         
         {/* Visual schematic browser mock */}
-        <div className="w-full h-full p-4 flex flex-col bg-[#F3F4F6] relative group-hover:bg-[#ECEEF2] transition-colors duration-300">
+        <div className="w-full h-full p-4 flex flex-col bg-[#F1F5F9] relative group-hover:bg-[#E8EDF4] transition-colors duration-300">
           {/* Browser header */}
           <div className="flex items-center gap-1.5 mb-2">
             <span className="w-2 h-2 rounded-full bg-red-400/80" />
@@ -120,7 +120,7 @@ export default function ProjectCard({
           {tech.map((item) => (
             <span
               key={item}
-              className="text-[10px] font-semibold px-2 py-0.5 rounded bg-bg-alt text-text-secondary hover:bg-cta hover:text-white transition-colors duration-200 cursor-default"
+              className="text-[10px] font-semibold px-2 py-0.5 rounded bg-accent-soft/50 text-cta hover:bg-cta hover:text-white transition-colors duration-200 cursor-default"
             >
               {item}
             </span>
