@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
               </div>
               
-              <div className="md:col-span-2">
+              <div className={"liveUrl" in project && project.liveUrl ? "md:col-span-1" : "md:col-span-2"}>
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-muted mb-2">
                   Technologies Utilized
                 </span>
@@ -96,6 +96,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   ))}
                 </div>
               </div>
+
+              {"liveUrl" in project && project.liveUrl && (
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-muted mb-2">
+                    Live Demo
+                  </span>
+                  <a
+                    href={project.liveUrl as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cta text-white hover:bg-cta-hover text-xs font-bold transition-all duration-200 shadow-sm hover:-translate-y-0.5"
+                  >
+                    Visit Live Website
+                    <span className="text-[10px]">↗</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -168,6 +185,64 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── PROJECT GALLERY ── */}
+      {"images" in project && Array.isArray(project.images) && project.images.length > 0 && (
+        <section className="py-24 bg-bg border-b border-border-main">
+          <div className="container-max">
+            <div className="max-w-2xl mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-cta block mb-3">
+                Visual Showcase
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl text-text-main mb-4 uppercase tracking-tight">
+                Interface Previews
+              </h2>
+              <p className="text-text-secondary text-base">
+                Take a look at the key pages and interactive views designed and engineered for the application.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {(project.images as string[]).map((imgUrl, index) => (
+                <div key={index} className="group bg-surface border border-border-main rounded-xl overflow-hidden shadow-sm hover:border-cta/25 transition-all duration-300">
+                  <div className="relative aspect-[16/10] bg-bg-alt border-b border-border-main overflow-hidden flex flex-col">
+                    {/* Browser Mock Header */}
+                    <div className="flex items-center gap-1.5 p-3 bg-bg border-b border-border-main/60">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                      <div className="h-4 bg-surface rounded-md w-1/3 ml-2 flex items-center px-2 border border-border-main/50">
+                        <span className="text-[8px] text-muted truncate">
+                          {project.slug === "purebite-grocery" ? "purebite.com" : "freshcart.com"}
+                          {imgUrl.includes("shop") && "/shop"}
+                          {imgUrl.includes("about") && "/about"}
+                          {imgUrl.includes("contact") && "/contact"}
+                        </span>
+                      </div>
+                    </div>
+                    {/* Screenshot image */}
+                    <div className="flex-grow overflow-hidden relative">
+                      <img
+                        src={imgUrl}
+                        alt={`${project.title} Screenshot - ${index + 1}`}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-4 bg-surface text-center">
+                    <span className="text-[11px] font-bold text-text-secondary tracking-wide uppercase">
+                      {imgUrl.includes("home") && "Landing Page & Promotional Banners"}
+                      {imgUrl.includes("shop") && "E-Commerce Shopping Catalog"}
+                      {imgUrl.includes("about") && "Company About Us & Vision"}
+                      {imgUrl.includes("contact") && "Contact Form & Razorpay Payment Support"}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

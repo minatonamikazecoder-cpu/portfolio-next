@@ -11,6 +11,7 @@ interface ProjectCardProps {
   category: string;
   status: string;
   tech: string[];
+  image?: string;
 }
 
 export default function ProjectCard({
@@ -20,6 +21,7 @@ export default function ProjectCard({
   category,
   status,
   tech,
+  image,
 }: ProjectCardProps) {
   // Determine tag classes based on category
   const getTagStyles = () => {
@@ -75,33 +77,43 @@ export default function ProjectCard({
           </div>
           
           {/* Browser viewport mockup content */}
-          <div className="flex-grow bg-white rounded-md border border-border-main/50 p-3 shadow-sm flex flex-col justify-between overflow-hidden relative">
-            <div className="flex items-start gap-2.5">
-              <div className="w-7 h-7 rounded bg-cta/10 flex items-center justify-center flex-shrink-0">
-                {getIcon(category)}
+          <div className="flex-grow bg-white rounded-md border border-border-main/50 shadow-sm flex flex-col justify-between overflow-hidden relative">
+            {image ? (
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover object-top"
+              />
+            ) : (
+              <div className="p-3 flex flex-col justify-between h-full">
+                <div className="flex items-start gap-2.5">
+                  <div className="w-7 h-7 rounded bg-cta/10 flex items-center justify-center flex-shrink-0">
+                    {getIcon(category)}
+                  </div>
+                  <div className="flex-grow space-y-1.5">
+                    <div className="h-2.5 bg-text-main/10 rounded w-1/2" />
+                    <div className="h-1.5 bg-text-secondary/10 rounded w-5/6" />
+                    <div className="h-1.5 bg-text-secondary/10 rounded w-4/5" />
+                  </div>
+                </div>
+                
+                {/* Visual Schematic Chart/Blocks */}
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
+                    <div className="h-1 bg-text-secondary/10 rounded w-3/4" />
+                    <div className="h-2 bg-cta/25 rounded w-1/2" />
+                  </div>
+                  <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
+                    <div className="h-1 bg-text-secondary/10 rounded w-1/2" />
+                    <div className="h-2 bg-cta/40 rounded w-2/3" />
+                  </div>
+                  <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
+                    <div className="h-1 bg-text-secondary/10 rounded w-5/6" />
+                    <div className="h-1.5 bg-cta/15 rounded w-1/3" />
+                  </div>
+                </div>
               </div>
-              <div className="flex-grow space-y-1.5">
-                <div className="h-2.5 bg-text-main/10 rounded w-1/2" />
-                <div className="h-1.5 bg-text-secondary/10 rounded w-5/6" />
-                <div className="h-1.5 bg-text-secondary/10 rounded w-4/5" />
-              </div>
-            </div>
-            
-            {/* Visual Schematic Chart/Blocks */}
-            <div className="mt-3 grid grid-cols-3 gap-2">
-              <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
-                <div className="h-1 bg-text-secondary/10 rounded w-3/4" />
-                <div className="h-2 bg-cta/25 rounded w-1/2" />
-              </div>
-              <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
-                <div className="h-1 bg-text-secondary/10 rounded w-1/2" />
-                <div className="h-2 bg-cta/40 rounded w-2/3" />
-              </div>
-              <div className="h-7 rounded bg-bg-alt/50 border border-border-main/30 p-1 flex flex-col justify-between">
-                <div className="h-1 bg-text-secondary/10 rounded w-5/6" />
-                <div className="h-1.5 bg-cta/15 rounded w-1/3" />
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

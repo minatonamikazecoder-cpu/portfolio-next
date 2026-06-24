@@ -232,6 +232,7 @@ export default function Home() {
                 category={project.category}
                 status={project.status}
                 tech={project.tech}
+                image={"image" in project ? project.image : undefined}
               />
             ))}
           </StaggerGrid>

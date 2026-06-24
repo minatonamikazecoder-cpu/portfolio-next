@@ -1,21 +1,29 @@
 [
   {
-    "slug": "freshcart-web",
-    "title": "FreshCart Web",
-    "summary": "Migrated a high-traffic grocery store application from a MERN stack to a PERN stack (PostgreSQL + TypeScript) with a complete frontend UI upgrade, yielding 40% faster page speeds.",
-    "description": "Migrating a live grocery e-commerce storefront from MongoDB to PostgreSQL. Refactoring raw JavaScript API endpoints into structural TypeScript. Rewriting frontend views for visual modernism and load speeds.",
+    "slug": "purebite-grocery",
+    "title": "PureBite",
+    "summary": "A fully responsive e-commerce grocery store web application featuring a modern cart state, secure Razorpay checkout, and responsive design, built with the MERN stack (MongoDB, Express, React, Node.js) with raw JavaScript.",
+    "description": "A premium, high-converting digital storefront designed for selling organic and vegetarian products. Built with raw JavaScript, persistent cart, and seamless Razorpay gateway.",
     "category": "Web Development",
-    "status": "In Development",
-    "tech": ["React", "TypeScript", "PostgreSQL", "Node.js", "Express", "Tailwind CSS"],
+    "status": "Completed",
+    "tech": ["React", "JavaScript", "MongoDB", "Express", "Node.js", "Razorpay API", "CSS"],
     "featured": true,
+    "image": "/projects/purebite-home.png",
+    "liveUrl": "https://grocery-store-inky.vercel.app/",
+    "images": [
+      "/projects/purebite-home.png",
+      "/projects/purebite-shop.png",
+      "/projects/purebite-about.png",
+      "/projects/purebite-contact.png"
+    ],
     "caseStudy": {
-      "overview": "FreshCart is a high-traffic online grocery delivery service. As the platform scaled, the initial MongoDB database structure led to serious data inconsistency issues, missing relationships, and slow complex queries. The frontend codebase, written in un-typed JavaScript, suffered from frequent runtime bugs and slow rendering speeds.",
-      "challenge": "The main challenges were three-fold: first, migrating hundreds of thousands of documents from MongoDB to PostgreSQL without causing service downtime; second, refactoring a massive legacy JavaScript codebase into strict TypeScript to prevent runtime type errors; and third, optimizing frontend bundle sizes to improve load times for users on low-bandwidth mobile connections.",
-      "solution": "We designed and executed a phased migration database strategy using structured PostgreSQL schemas with strict foreign key constraints. We completely refactored the backend controllers and utility functions into TypeScript. On the frontend, we migrated to a modern Next.js structure and optimized asset loading.",
+      "overview": "PureBite is a fast and responsive online grocery shopping storefront specifically optimized for organic and vegetarian products. The platform is engineered to allow users to easily browse fresh products, search for grocery items, filter by category, manage a persistent shopping cart state, and complete payments securely via Razorpay.",
+      "challenge": "Building a high-performance e-commerce storefront requires rapid page interactions, instant shopping cart additions, and secure state handling on the client side. A major challenge was creating a frictionless, reliable checkout flow integrated with external payment APIs (Razorpay) while maintaining smooth performance across mobile devices.",
+      "solution": "We designed and implemented a MERN stack (MongoDB, Express, React, Node.js) architecture. The React frontend relies on hooks and state synchronization for immediate cart feedback. Payments are processed through the embedded Razorpay checkout script, communicating securely with our Node.js/Express backend API for payment confirmation and receipt logging. No actual user data is stored insecurely or exposed on the frontend.",
       "results": [
-        "40% improvement in page load speeds and overall rendering latency.",
-        "Zero data loss or schema inconsistencies during database migration.",
-        "99.9% reduction in runtime frontend errors due to strict type checking."
+        "Instant e-commerce cart calculation and update response times.",
+        "Secure payments processed through Razorpay with backend verification.",
+        "Client-side rendering enables fast transitions without full page loads."
       ]
     }
   },

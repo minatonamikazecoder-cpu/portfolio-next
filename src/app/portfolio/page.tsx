@@ -43,6 +43,7 @@ export default function PortfolioPage() {
                   category={project.category}
                   status={project.status}
                   tech={project.tech}
+                  image={"image" in project ? project.image : undefined}
                 />
               ))}
             </StaggerGrid>
