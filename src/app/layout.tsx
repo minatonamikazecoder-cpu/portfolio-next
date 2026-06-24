@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Archivo, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 const archivo = Archivo({
   variable: "--font-sans",
@@ -53,13 +55,15 @@ export default function RootLayout({
       className={`${archivo.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-text-main font-sans">
-        <ScrollProgress />
-        <Navbar />
-        <main className="flex-grow pt-18">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
-        <ScrollToTop />
+        <SmoothScrollProvider>
+          <ScrollProgress />
+          <Navbar />
+          <main className="flex-grow pt-18">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
