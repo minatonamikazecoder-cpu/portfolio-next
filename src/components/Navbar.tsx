@@ -64,8 +64,9 @@ export default function Navbar() {
         }`}
       >
         <div className="container-max w-full flex items-center justify-between">
-          <Link href="/" className="font-heading text-xl text-text-main font-bold tracking-tight flex items-center gap-2">
-            Mr. Freelancer
+          <Link href="/" className="font-heading text-xl text-text-main font-bold tracking-tight flex items-center gap-2.5">
+            <img src="/logo.svg" alt="Mr. Freelancer Logo" className="w-8 h-8 rounded-full shadow-sm border border-border-main/50" />
+            <span>Mr. Freelancer</span>
           </Link>
 
           {/* Desktop Links */}

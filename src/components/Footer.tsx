@@ -19,7 +19,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand block */}
           <div>
-            <div className="font-heading text-2xl font-bold mb-4 tracking-tight">Mr. Freelancer</div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.svg" alt="Mr. Freelancer Logo" className="w-10 h-10 rounded-full shadow-sm border border-border-main/50" />
+              <div className="font-heading text-2xl font-bold tracking-tight">Mr. Freelancer</div>
+            </div>
             <p className="text-text-secondary text-sm max-w-xs leading-relaxed">
               Building digital products. We design, develop, and scale custom web and mobile ecosystems — from concept to launch.
             </p>

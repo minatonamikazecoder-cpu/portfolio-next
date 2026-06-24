@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Dark navy gradient for M -->
+    <linearGradient id="logo-navy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070d1e" />
+      <stop offset="100%" stop-color="#020308" />
+    </linearGradient>
+
+    <!-- Glowing blue-to-purple gradient for F -->
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer background circle -->
+  <circle cx="256" cy="256" r="248" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- The "M" Shape (Navy) -->
+  <path d="M 72 139 H 120 V 174 L 230 284 L 283 231 V 299 L 230 352 L 120 242 V 376 H 72 Z" fill="url(#logo-navy)" />
+
+  <!-- The "F" Shape (Blue/Purple Gradient) -->
+  <path d="M 244 284 L 389 139 H 462 L 414 187 H 345 V 225 H 415 L 367 273 H 345 V 350 L 297 398 V 231 Z" fill="url(#logo-gradient)" />
+</svg>
