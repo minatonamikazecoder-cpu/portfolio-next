@@ -2,7 +2,6 @@
   {
     "slug": "purebite-grocery",
     "title": "PureBite",
-    "hidden": true,
     "summary": "A fully responsive e-commerce grocery store web application featuring a modern cart state, secure Razorpay checkout, and responsive design, built with the MERN stack (MongoDB, Express, React, Node.js) with raw JavaScript.",
     "description": "A premium, high-converting digital storefront designed for selling organic and vegetarian products. Built with raw JavaScript, persistent cart, and seamless Razorpay gateway.",
     "category": "Web Development",
@@ -31,6 +30,7 @@
   {
     "slug": "freshcart-mobile",
     "title": "FreshCart Mobile",
+    "hidden": true,
     "summary": "Cross-platform iOS and Android shopping apps built with Flutter, sharing the same unified Node.js/Postgres API backend to handle real-time inventory and order processing with single-codebase efficiency.",
     "description": "Developing cross-platform iOS and Android mobile shopping apps sharing the exact same backend database API as the web platform. Focuses on cart states and order flows.",
     "category": "App Development",
