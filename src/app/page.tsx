@@ -140,7 +140,7 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="text-[11px] font-bold text-text-main">Build Complete</div>
-                        <div className="text-[10px] text-muted">Deployed to production</div>
+                        <div className="text-[10px] text-muted">Deployed and operational</div>
                       </div>
                     </div>
                   </div>
