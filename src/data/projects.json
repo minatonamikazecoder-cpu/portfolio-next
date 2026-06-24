@@ -2,6 +2,7 @@
   {
     "slug": "purebite-grocery",
     "title": "PureBite",
+    "hidden": true,
     "summary": "A fully responsive e-commerce grocery store web application featuring a modern cart state, secure Razorpay checkout, and responsive design, built with the MERN stack (MongoDB, Express, React, Node.js) with raw JavaScript.",
     "description": "A premium, high-converting digital storefront designed for selling organic and vegetarian products. Built with raw JavaScript, persistent cart, and seamless Razorpay gateway.",
     "category": "Web Development",

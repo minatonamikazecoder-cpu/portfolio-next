@@ -6,6 +6,8 @@ import { FolderOpen } from "lucide-react";
 import projectsData from "@/data/projects.json";
 
 export default function PortfolioPage() {
+  const visibleProjects = projectsData.filter((project) => !("hidden" in project && project.hidden));
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
@@ -28,13 +30,13 @@ export default function PortfolioPage() {
       {/* Projects Grid Section */}
       <section className="py-20 bg-surface">
         <div className="container-max">
-          {projectsData.length > 0 ? (
+          {visibleProjects.length > 0 ? (
             <StaggerGrid
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
               staggerDelay={0.1}
               variant="blur-in"
             >
-              {projectsData.map((project) => (
+              {visibleProjects.map((project) => (
                 <ProjectCard
                   key={project.title}
                   slug={project.slug}

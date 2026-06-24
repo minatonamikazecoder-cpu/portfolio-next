@@ -12,7 +12,7 @@ import servicesData from "@/data/services.json";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
-  const featuredProjects = projectsData.filter((project) => project.featured);
+  const featuredProjects = projectsData.filter((project) => project.featured && !("hidden" in project && project.hidden));
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -210,10 +210,10 @@ export default function Home() {
                 Selected Work
               </span>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-text-main mb-4 uppercase tracking-tight">
-                Active Client Projects
+                Selected Projects
               </h2>
               <p className="text-text-secondary text-base">
-                We believe in transparency. Here are the active client projects and platforms we are currently designing, building, and refactoring.
+                We believe in building high-performance digital products. Here are some of the active projects and platforms we are currently designing, building, and refactoring.
               </p>
             </AnimateOnScroll>
           </div>

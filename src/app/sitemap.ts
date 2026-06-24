@@ -13,12 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  const projectRoutes = projectsData.map((project) => ({
-    url: `${baseUrl}/portfolio/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.6,
-  }));
+  const projectRoutes = projectsData
+    .filter((project) => !("hidden" in project && project.hidden))
+    .map((project) => ({
+      url: `${baseUrl}/portfolio/${project.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
 
   return [...staticRoutes, ...projectRoutes];
 }

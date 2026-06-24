@@ -12,14 +12,16 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
-  return projectsData.map((project) => ({
-    slug: project.slug,
-  }));
+  return projectsData
+    .filter((project) => !("hidden" in project && project.hidden))
+    .map((project) => ({
+      slug: project.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const project = projectsData.find((p) => p.slug === resolvedParams.slug);
+  const project = projectsData.find((p) => p.slug === resolvedParams.slug && !("hidden" in p && p.hidden));
   if (!project) return {};
 
   return {
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const resolvedParams = await params;
-  const project = projectsData.find((p) => p.slug === resolvedParams.slug);
+  const project = projectsData.find((p) => p.slug === resolvedParams.slug && !("hidden" in p && p.hidden));
 
   if (!project) {
     notFound();
